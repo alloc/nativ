@@ -82,7 +82,7 @@ const theme = createTheme({
   },
 })
 
-export type AppTheme = typeof theme
+export type Theme = typeof theme
 export { theme }
 ```
 
@@ -90,10 +90,9 @@ export { theme }
 
 ```typescript
 import { createPrimitives } from 'nativ/ui'
-import { AppTheme } from './theme'
+import { Theme } from './theme'
 
-export const { View, Text, MotiView, Pressable, LinearGradient } =
-  createPrimitives<AppTheme>()
+export const { View, Text, MotiView, Pressable } = createPrimitives<Theme>()
 ```
 
 ### 4. Set up your app
@@ -131,8 +130,9 @@ function AppContent() {
 
 ```typescript
 import { createPrimitives } from 'nativ/ui'
+import { Theme } from './theme'
 
-const primitives = createPrimitives<YourTheme>()
+const primitives = createPrimitives<Theme>()
 ```
 
 Returns an object with the following components:
@@ -146,7 +146,42 @@ Returns an object with the following components:
 - `MotiText` - Animated Text with Moti integration
 - `MotiImage` - Animated Image with Moti integration
 - `MotiScrollView` - Animated ScrollView with Moti integration
-- `LinearGradient` - Enhanced LinearGradient with `from`/`to` props
+
+### Additional UI Components
+
+```typescript
+import { Theme } from './theme'
+import {
+  createLinearGradient,
+  createFlashList,
+  createKeyboardAvoidingView,
+  createKeyboardAwareScrollView,
+  createKeyboardBackgroundView,
+  createKeyboardControllerView,
+  createKeyboardStickyView,
+} from 'nativ/ui'
+
+const LinearGradient = createLinearGradient<Theme>()
+const FlashList = createFlashList<Theme>()
+const KeyboardAvoidingView = createKeyboardAvoidingView<Theme>()
+const KeyboardAwareScrollView = createKeyboardAwareScrollView<Theme>()
+const KeyboardBackgroundView = createKeyboardBackgroundView<Theme>()
+const KeyboardControllerView = createKeyboardControllerView<Theme>()
+const KeyboardStickyView = createKeyboardStickyView<Theme>()
+```
+
+You can find more details about each component in the links below:
+
+- [expo-linear-gradient](https://docs.expo.dev/versions/latest/sdk/linear-gradient/)
+  - `LinearGradient` - Linear gradient view with `from`/`to` props (instead of `start`/`end`) for compatibility with Restyle
+- [@shopify/flash-list](https://shopify.github.io/flash-list/docs/)
+  - `FlashList` - High-performance list component with Restyle props
+- [react-native-keyboard-controller](https://www.npmjs.com/package/react-native-keyboard-controller)
+  - [`KeyboardAvoidingView`](https://kirillzyusko.github.io/react-native-keyboard-controller/docs/api/components/keyboard-avoiding-view) - Automatically adjusts its height, position, or bottom padding based on the keyboard height to remain visible while the virtual keyboard is displayed
+  - [`KeyboardAwareScrollView`](https://kirillzyusko.github.io/react-native-keyboard-controller/docs/api/components/keyboard-aware-scroll-view) - Effortlessly handles keyboard appearance, automatically scrolls to focused `TextInput` and provides a native-like performance
+  - [`KeyboardBackgroundView`](https://kirillzyusko.github.io/react-native-keyboard-controller/docs/api/views/keyboard-background-view) - Visual-only utility that replicates the background of the system keyboard
+  - [`KeyboardControllerView`](https://kirillzyusko.github.io/react-native-keyboard-controller/docs/api/views/keyboard-controller-view) - A plain react-native `View` with some additional methods and props
+  - [`KeyboardStickyView`](https://kirillzyusko.github.io/react-native-keyboard-controller/docs/api/components/keyboard-sticky-view) - Seamlessly ensures that a designated view sticks to the keyboard's movements, maintaining visibility and interaction
 
 ### Hooks
 
