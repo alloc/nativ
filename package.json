@@ -56,27 +56,27 @@
     ".": {
       "react-native": "./src/index.ts",
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.cjs"
+      "default": "./dist/index.js"
     },
     "./ui": {
       "react-native": "./src/ui/index.ts",
       "types": "./dist/ui.d.ts",
-      "default": "./dist/ui.cjs"
+      "default": "./dist/ui.js"
     },
     "./hooks": {
       "react-native": "./src/hooks/index.ts",
       "types": "./dist/hooks.d.ts",
-      "default": "./dist/hooks.cjs"
+      "default": "./dist/hooks.js"
     },
     "./providers": {
       "react-native": "./src/providers/index.ts",
       "types": "./dist/providers.d.ts",
-      "default": "./dist/providers.cjs"
+      "default": "./dist/providers.js"
     },
     "./polyfills": {
       "react-native": "./src/polyfills/index.ts",
       "types": "./dist/polyfills.d.ts",
-      "default": "./dist/polyfills.cjs"
+      "default": "./dist/polyfills.js"
     },
     "./metro-config": "./metro.config.js",
     "./babel-preset": "./babel-preset.js"
