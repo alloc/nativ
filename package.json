@@ -38,7 +38,7 @@
     "expo-linking": "*",
     "expo-localization": "*",
     "expo-notifications": "*",
-    "expo-router": "*",
+    "expo-router": "^6.0.0-beta.0",
     "expo-splash-screen": "*",
     "expo-sqlite": "*",
     "expo-status-bar": "*",
