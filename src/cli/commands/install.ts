@@ -14,30 +14,24 @@ export default command({
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
     const peerDeps = packageJson.peerDependencies || {}
 
-    // Use our fork of Restyle.
+    // Use our fork, but still use @shopify/restyle as the package name.
     peerDeps['@shopify/restyle'] =
       'npm:@alloc/restyle@' + peerDeps['@shopify/restyle']
 
-    // Install expo first, so we can run expo install. Also include
-    // any dependencies using the "npm:" protocol (not supported by
-    // expo install).
-    const initialDeps = pick(peerDeps, ['expo', '@shopify/restyle'])
+    // Install an exact version of Expo.
+    $(`pnpm install -E expo@${peerDeps.expo}`)
 
-    $(
-      'pnpm add',
-      Object.entries(initialDeps).map(([key, value]) => `${key}@${value}`)
+    // These dependencies must be installed with pnpm, not expo.
+    const pnpmDeps = ['@shopify/restyle']
+
+    // These dependencies are installed with expo install, which ensures
+    // only compatible versions are installed.
+    const otherDeps = Object.entries(peerDeps).filter(
+      ([name]) => name !== 'expo' && !pnpmDeps.includes(name)
     )
 
-    for (const key in initialDeps) {
-      delete peerDeps[key]
-    }
-
-    // Get remaining dependencies
-    const otherDeps = Object.entries(peerDeps).map(([key, value]) =>
-      value === '*' ? key : `${key}@${value}`
-    )
-
-    $('expo install --pnpm', otherDeps)
+    $('pnpm install', pnpmDeps.map(name => `${name}@${peerDeps[name]}`))
+    $('expo install --pnpm', otherDeps.map(([key, value]) => `${key}@${value}`))
 
     console.log('\n✔︎ Peer dependencies installed.')
   },
