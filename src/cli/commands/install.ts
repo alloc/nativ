@@ -21,16 +21,14 @@ export default command({
     console.log('Installing expo...')
     console.log(`\npnpm add expo@"${peerDeps.expo}"`)
     execSync(`pnpm add expo@"${peerDeps.expo}"`, { stdio: 'inherit' })
+    delete peerDeps.expo
 
-    // Get remaining dependencies (excluding expo)
-    const remainingDeps = Object.entries(peerDeps)
-      .filter(([name]) => name !== 'expo')
-      .map(([name, version]) => `${name}@"${version}"`)
-      .join(' ')
+    // Get remaining dependencies
+    const otherDeps = Object.keys(peerDeps).join(' ')
 
     console.log('Installing peer dependencies with expo...')
-    console.log(`\nexpo install --pnpm ${remainingDeps}`)
-    execSync(`expo install --pnpm ${remainingDeps}`, { stdio: 'inherit' })
+    console.log(`\nexpo install --pnpm ${otherDeps}`)
+    execSync(`expo install --pnpm ${otherDeps}`, { stdio: 'inherit' })
 
     console.log('✅ Peer dependencies installed successfully!')
   },
