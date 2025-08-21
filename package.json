@@ -60,27 +60,27 @@
     },
     "./ui": {
       "react-native": "./src/ui/index.ts",
-      "types": "./dist/ui/index.d.ts",
-      "import": "./dist/ui/index.js",
-      "require": "./dist/ui/index.cjs"
+      "types": "./dist/ui.d.ts",
+      "import": "./dist/ui.js",
+      "require": "./dist/ui.cjs"
     },
     "./hooks": {
       "react-native": "./src/hooks/index.ts",
-      "types": "./dist/hooks/index.d.ts",
-      "import": "./dist/hooks/index.js",
-      "require": "./dist/hooks/index.cjs"
+      "types": "./dist/hooks.d.ts",
+      "import": "./dist/hooks.js",
+      "require": "./dist/hooks.cjs"
     },
     "./providers": {
       "react-native": "./src/providers/index.ts",
-      "types": "./dist/providers/index.d.ts",
-      "import": "./dist/providers/index.js",
-      "require": "./dist/providers/index.cjs"
+      "types": "./dist/providers.d.ts",
+      "import": "./dist/providers.js",
+      "require": "./dist/providers.cjs"
     },
     "./polyfills": {
       "react-native": "./src/polyfills/index.ts",
-      "types": "./dist/polyfills/index.d.ts",
-      "import": "./dist/polyfills/index.js",
-      "require": "./dist/polyfills/index.cjs"
+      "types": "./dist/polyfills.d.ts",
+      "import": "./dist/polyfills.js",
+      "require": "./dist/polyfills.cjs"
     },
     "./metro-config": "./metro.config.js",
     "./babel-preset": "./babel-preset.js"
