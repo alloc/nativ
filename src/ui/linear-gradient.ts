@@ -30,6 +30,11 @@ export interface LinearGradientProps
   to?: LinearGradientPoint | null
 }
 
+/**
+ * Same as `LinearGradient` from `expo-linear-gradient` **except** the
+ * `start`/`end` props are renamed to `from`/`to`, due to a conflict
+ * with `@shopify/restyle` props.
+ */
 export const createLinearGradient = <Theme extends BaseTheme>() =>
   createBox<Theme, LinearGradientProps>(function LinearGradient({
     from,

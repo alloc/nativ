@@ -2,7 +2,6 @@ import { BaseTheme, createBox, createText } from '@shopify/restyle'
 import * as moti from 'moti'
 import { ComponentProps } from 'react'
 import * as reactNative from 'react-native'
-import { createLinearGradient } from './linear-gradient'
 
 /**
  * Creates a set of primitive components that work with the provided
@@ -35,13 +34,6 @@ export function createPrimitives<Theme extends BaseTheme>() {
     ComponentProps<typeof moti.MotiScrollView>
   >(moti.MotiScrollView)
 
-  /**
-   * Same as `LinearGradient` from `expo-linear-gradient` **except** the
-   * `start`/`end` props are renamed to `from`/`to`, due to a conflict
-   * with `@shopify/restyle` props.
-   */
-  const LinearGradient = createLinearGradient<Theme>()
-
   return {
     View,
     Text,
@@ -52,6 +44,5 @@ export function createPrimitives<Theme extends BaseTheme>() {
     MotiText,
     MotiImage,
     MotiScrollView,
-    LinearGradient,
   }
 }
