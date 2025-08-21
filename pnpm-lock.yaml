@@ -90,8 +90,8 @@ importers:
         specifier: '*'
         version: 0.30.0(react-dom@19.1.1(react@19.1.1))(react-native-reanimated@4.0.2(@babel/core@7.28.3)(react-native-worklets@0.4.1(@babel/core@7.28.3)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react@19.1.1)
       picospawn:
-        specifier: ^0.3.2
-        version: 0.3.2
+        specifier: ^0.3.5
+        version: 0.3.5
       radashi:
         specifier: '*'
         version: 12.6.2
@@ -3065,8 +3065,8 @@ packages:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
-  picospawn@0.3.2:
-    resolution: {integrity: sha512-dXc9/ffCjdLCj3hmTrvuTED5cmQarmI0siOyoMLoyo0GSwk6buT8S8mqWFskLNYlFYeK3Ny27qQioZ7xfIFQyA==}
+  picospawn@0.3.5:
+    resolution: {integrity: sha512-8xBWIbwBVa8zSUpFyRcCq0HVuHeH4DGcR+2KQnKozG2NLLa2HZnoMPX7Gx1rXUM6LOBiZ8Eyc/Jl3WytgACjhQ==}
 
   pirates@4.0.7:
     resolution: {integrity: sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==}
@@ -7319,7 +7319,7 @@ snapshots:
 
   picomatch@4.0.3: {}
 
-  picospawn@0.3.2: {}
+  picospawn@0.3.5: {}
 
   pirates@4.0.7: {}
 
