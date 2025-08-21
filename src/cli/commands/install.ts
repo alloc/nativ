@@ -18,15 +18,15 @@ export default command({
       'npm:@alloc/restyle@' + peerDeps['@shopify/restyle']
 
     // Install expo first
-    console.log('Installing expo...')
     console.log(`\npnpm add expo@"${peerDeps.expo}"`)
     execSync(`pnpm add expo@"${peerDeps.expo}"`, { stdio: 'inherit' })
     delete peerDeps.expo
 
     // Get remaining dependencies
-    const otherDeps = Object.keys(peerDeps).join(' ')
+    const otherDeps = Object.entries(peerDeps)
+      .map(([key, value]) => (value === '*' ? key : `${key}@"${value}"`))
+      .join(' ')
 
-    console.log('Installing peer dependencies with expo...')
     console.log(`\nexpo install --pnpm ${otherDeps}`)
     execSync(`expo install --pnpm ${otherDeps}`, { stdio: 'inherit' })
 
