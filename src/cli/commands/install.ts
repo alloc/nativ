@@ -18,17 +18,17 @@ export default command({
 
     // Install expo first
     console.log(`\npnpm add expo@"${peerDeps.expo}"`)
-    $(`pnpm add expo@"${peerDeps.expo}"`)
+    $('pnpm add', [`expo@${peerDeps.expo}`])
 
     delete peerDeps.expo
 
     // Get remaining dependencies
-    const otherDeps = Object.entries(peerDeps)
-      .map(([key, value]) => (value === '*' ? key : `${key}@"${value}"`))
-      .join(' ')
+    const otherDeps = Object.entries(peerDeps).map(([key, value]) =>
+      value === '*' ? key : `${key}@${value}`
+    )
 
-    $(`expo install --pnpm ${otherDeps}`)
+    $('expo install --pnpm', otherDeps)
 
-    console.log('\n✅ Peer dependencies installed successfully!')
+    console.log('\n✔︎ Peer dependencies installed.')
   },
 })

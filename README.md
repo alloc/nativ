@@ -19,7 +19,7 @@ This library requires several peer dependencies to be installed in your project.
 pnpm nativ install
 ```
 
-### Generate Icon Assets
+### Generating Icon Assets
 
 Automatically generate @2x and @3x PNG versions of SVG icons:
 
@@ -33,6 +33,25 @@ This command:
 - Identifies missing @2x.png and @3x.png versions
 - Generates high-resolution PNG assets using [svgexport](https://github.com/piqnt/svgexport)
 - Skips files that already have both versions
+
+### Upgrading the Template
+
+Upgrade your project to the latest version of the [nativ-template](https://github.com/alloc/nativ-template):
+
+```bash
+pnpm nativ upgrade-template
+```
+
+This command:
+
+- Creates a patch from the last template commit your project used to the current template version
+- Attempts to apply the patch to your project files
+- If the patch cannot be applied cleanly, you will need to resolve merge conflicts manually
+- After resolving any conflicts, you can run the command again with the `--continue` flag to finish the upgrade:
+
+```bash
+pnpm nativ upgrade-template --continue
+```
 
 ## Quick Start
 
