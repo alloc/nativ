@@ -2,6 +2,9 @@
 
 Core utilities and components for React Native apps built with Expo, Restyle, and Moti.
 
+> [!NOTE]
+> It's recommended to use the [nativ-template](https://github.com/alloc/nativ-template) when creating a new project.
+
 ## Installation
 
 ```bash
