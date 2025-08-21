@@ -45,6 +45,7 @@
     "moti": "*",
     "radashi": "*",
     "react": "*",
+    "react-dom": "*",
     "react-native": "*",
     "react-native-get-random-values": "*",
     "react-native-keyboard-controller": "*",
