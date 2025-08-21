@@ -1,5 +1,2 @@
-export {
-  createPrimitives,
-  type LinearGradientProps,
-  type PrimitivesReturnType,
-} from './primitives'
+export type { LinearGradientProps } from './linear-gradient'
+export { createPrimitives } from './primitives'
