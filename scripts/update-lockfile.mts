@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 
 const gitStatus = $('git status --porcelain', { stdio: 'pipe' })
 if (gitStatus) {
-  console.error('⚠️ Git repo must be clean')
+  console.error('⚠️  Git repo must be clean')
   process.exit(1)
 }
 
@@ -38,7 +38,7 @@ if (expoPeerDep && expoPeerDep.includes('alpha')) {
       packageJson.peerDependencies[dep] = nextVersion
     } else {
       console.warn(
-        `⚠️ Could not get "next" version for ${dep}, using latest...`
+        `⚠️  Could not get "next" version for ${dep}, using latest...`
       )
     }
   }
