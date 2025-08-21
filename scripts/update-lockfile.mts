@@ -4,8 +4,6 @@ import { spawnSync as $ } from 'picospawn'
 import { fileURLToPath } from 'url'
 
 const gitStatus = $('git status --porcelain', { stdio: 'pipe' })
-console.log({ gitStatus })
-
 if (gitStatus) {
   console.error('⚠️ Git repo must be clean')
   process.exit(1)
@@ -32,11 +30,8 @@ if (expoPeerDep && expoPeerDep.includes('alpha')) {
 
   // Update each expo dependency to @next version
   for (const dep of expoDeps) {
-    const result = $(`npm view ${dep}@next version`, { stdio: 'pipe' })
-    console.log({ result })
-
-    if (result) {
-      const nextVersion = result.trim()
+    const nextVersion = $(`npm view ${dep}@next version`, { stdio: 'pipe' })
+    if (nextVersion) {
       console.log(`Updating ${dep} to ${nextVersion}`)
       packageJson.peerDependencies[dep] = nextVersion
     } else {
