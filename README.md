@@ -178,19 +178,6 @@ import { AppProvider, FontProvider, DatabaseProvider } from 'nativ/providers'
 <DatabaseProvider db={db} migrations={migrations} />
 ```
 
-### Polyfills
-
-```typescript
-// Import all polyfills
-import 'nativ/polyfills'
-
-// Or import specific ones
-import 'nativ/polyfills/AbortSignal'
-import 'nativ/polyfills/DOMException'
-import 'nativ/polyfills/fetch'
-import 'nativ/polyfills/react-native'
-```
-
 ### Configuration
 
 #### Metro Config
