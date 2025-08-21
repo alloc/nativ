@@ -19,6 +19,7 @@
     "@expo/metro-config": "*",
     "@expo/metro-runtime": "*",
     "@react-navigation/native": "*",
+    "@shopify/flash-list": "*",
     "@shopify/restyle": "*",
     "@types/react": "*",
     "babel-preset-expo": "*",
