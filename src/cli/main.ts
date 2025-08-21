@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
 import { binary, run, subcommands } from 'cmd-ts'
-import install from './commands/install'
+import pkg from '../../package.json'
 import generateIcons from './commands/generate-icons'
+import install from './commands/install'
 
 const app = subcommands({
   name: 'nativ',
   description: 'CLI for nativ library',
-  version: '0.1.0',
+  version: pkg.version,
   cmds: {
     install,
     'generate-icons': generateIcons,
