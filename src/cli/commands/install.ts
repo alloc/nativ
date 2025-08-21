@@ -13,7 +13,6 @@ export default command({
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
 
     const peerDeps = packageJson.peerDependencies || {}
-    peerDeps['drizzle-orm'] = 'beta'
     peerDeps['@shopify/restyle'] =
       'npm:@alloc/restyle@' + peerDeps['@shopify/restyle']
 

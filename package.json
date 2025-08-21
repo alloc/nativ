@@ -25,7 +25,7 @@
     "@shopify/restyle": "*",
     "@types/react": "*",
     "babel-preset-expo": "*",
-    "drizzle-orm": "*",
+    "drizzle-orm": "^1.0.0-alpha.0",
     "drizzle-plus": "*",
     "expo": "^54.0.0-alpha.0",
     "expo-build-properties": "*",
