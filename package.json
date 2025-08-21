@@ -6,8 +6,8 @@
     "nativ": "dist/cli/main.js"
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch"
+    "build": "tsup-node",
+    "dev": "tsup-node --watch"
   },
   "dependencies": {
     "@expo/metro-config": "~0.20.17",
