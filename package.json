@@ -2,12 +2,11 @@
   "name": "nativ",
   "version": "0.1.0",
   "description": "Core utilities and components for React Native apps",
-  "type": "module",
   "bin": {
     "nativ": "dist/cli/main.js"
   },
   "scripts": {
-    "build": "tsup-node",
+    "build": "tsup-node --clean",
     "dev": "tsup-node --watch"
   },
   "dependencies": {
@@ -56,32 +55,27 @@
     ".": {
       "react-native": "./src/index.ts",
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.cjs"
     },
     "./ui": {
       "react-native": "./src/ui/index.ts",
       "types": "./dist/ui.d.ts",
-      "import": "./dist/ui.js",
-      "require": "./dist/ui.cjs"
+      "default": "./dist/ui.cjs"
     },
     "./hooks": {
       "react-native": "./src/hooks/index.ts",
       "types": "./dist/hooks.d.ts",
-      "import": "./dist/hooks.js",
-      "require": "./dist/hooks.cjs"
+      "default": "./dist/hooks.cjs"
     },
     "./providers": {
       "react-native": "./src/providers/index.ts",
       "types": "./dist/providers.d.ts",
-      "import": "./dist/providers.js",
-      "require": "./dist/providers.cjs"
+      "default": "./dist/providers.cjs"
     },
     "./polyfills": {
       "react-native": "./src/polyfills/index.ts",
       "types": "./dist/polyfills.d.ts",
-      "import": "./dist/polyfills.js",
-      "require": "./dist/polyfills.cjs"
+      "default": "./dist/polyfills.cjs"
     },
     "./metro-config": "./metro.config.js",
     "./babel-preset": "./babel-preset.js"
