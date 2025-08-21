@@ -19,7 +19,6 @@
   "peerDependencies": {
     "@expo/metro-config": "*",
     "@expo/metro-runtime": "*",
-    "@react-navigation/elements": "*",
     "@react-navigation/native": "*",
     "@shopify/flash-list": "*",
     "@shopify/restyle": "*",
