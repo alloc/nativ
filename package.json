@@ -1,0 +1,86 @@
+{
+  "name": "nativ",
+  "version": "0.1.0",
+  "description": "Core utilities and components for React Native apps",
+  "bin": {
+    "nativ": "dist/cli/main.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "@expo/metro-config": "~0.20.17",
+    "babel-plugin-inline-import": "^3.0.0",
+    "babel-preset-expo": "~13.0.0",
+    "cmd-ts": "^0.13.0",
+    "svgexport": "^0.3.2",
+    "tinyglobby": "^0.2.10"
+  },
+  "peerDependencies": {
+    "@react-navigation/native": ">=7",
+    "@shopify/restyle": ">=2",
+    "drizzle-orm": ">=1.0.0-beta.0",
+    "expo": ">=53",
+    "expo-font": ">=13",
+    "expo-linear-gradient": ">=14",
+    "expo-router": ">=5",
+    "expo-splash-screen": ">=0.30",
+    "expo-sqlite": ">=15",
+    "expo-status-bar": ">=2",
+    "moti": ">=0.30",
+    "react": ">=19",
+    "react-native": ">=0.79",
+    "react-native-get-random-values": ">=1.11",
+    "react-native-reanimated": ">=3.17"
+  },
+  "devDependencies": {
+    "@alloc/prettier-config": "^1.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "tsc-lint": "^0.1.9",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "prettier": "@alloc/prettier-config",
+  "files": [
+    "dist",
+    "src",
+    "metro.config.js",
+    "babel-preset.js"
+  ],
+  "exports": {
+    ".": {
+      "react-native": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./ui": {
+      "react-native": "./src/ui/index.ts",
+      "types": "./dist/ui/index.d.ts",
+      "import": "./dist/ui/index.js",
+      "require": "./dist/ui/index.cjs"
+    },
+    "./hooks": {
+      "react-native": "./src/hooks/index.ts",
+      "types": "./dist/hooks/index.d.ts",
+      "import": "./dist/hooks/index.js",
+      "require": "./dist/hooks/index.cjs"
+    },
+    "./providers": {
+      "react-native": "./src/providers/index.ts",
+      "types": "./dist/providers/index.d.ts",
+      "import": "./dist/providers/index.js",
+      "require": "./dist/providers/index.cjs"
+    },
+    "./polyfills": {
+      "react-native": "./src/polyfills/index.ts",
+      "types": "./dist/polyfills/index.d.ts",
+      "import": "./dist/polyfills/index.js",
+      "require": "./dist/polyfills/index.cjs"
+    },
+    "./metro-config": "./metro.config.js",
+    "./babel-preset": "./babel-preset.js"
+  }
+}
