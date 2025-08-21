@@ -24,7 +24,7 @@
     "babel-preset-expo": "*",
     "drizzle-orm": "*",
     "drizzle-plus": "*",
-    "expo": "^53",
+    "expo": "next",
     "expo-build-properties": "*",
     "expo-constants": "*",
     "expo-dev-client": "*",
