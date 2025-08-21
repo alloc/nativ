@@ -27,7 +27,6 @@ export default command({
       .map(([key, value]) => (value === '*' ? key : `${key}@"${value}"`))
       .join(' ')
 
-    console.log(`\nexpo install --pnpm ${otherDeps}`)
     execSync(`expo install --pnpm ${otherDeps}`, { stdio: 'inherit' })
 
     console.log('✅ Peer dependencies installed successfully!')
