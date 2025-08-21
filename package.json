@@ -32,6 +32,7 @@
     "expo-dev-client": "*",
     "expo-device": "*",
     "expo-font": "*",
+    "expo-haptics": "*",
     "expo-linear-gradient": "*",
     "expo-linking": "*",
     "expo-notifications": "*",
