@@ -9,7 +9,7 @@ export default command({
   args: {},
   handler: () => {
     // Read nativ's package.json to get peer dependencies
-    const packageJsonPath = join(__dirname, '../../../package.json')
+    const packageJsonPath = join(__dirname, '../../package.json')
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
 
     const peerDeps = packageJson.peerDependencies || {}
