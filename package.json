@@ -7,7 +7,8 @@
   },
   "scripts": {
     "build": "tsup-node --clean",
-    "dev": "tsup-node --watch"
+    "dev": "tsup-node --watch",
+    "update-lockfile": "node scripts/update-lockfile.ts"
   },
   "dependencies": {
     "babel-plugin-inline-import": "^3.0.0",
@@ -52,6 +53,7 @@
   "devDependencies": {
     "@alloc/prettier-config": "^1.0.0",
     "@types/node": "^24.3.0",
+    "picospawn": "^0.3.2",
     "tsc-lint": "^0.1.9",
     "tsup": "^8.5.0"
   },
