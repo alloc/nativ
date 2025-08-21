@@ -29,6 +29,6 @@ export default command({
 
     execSync(`expo install --pnpm ${otherDeps}`, { stdio: 'inherit' })
 
-    console.log('✅ Peer dependencies installed successfully!')
+    console.log('\n✅ Peer dependencies installed successfully!')
   },
 })
