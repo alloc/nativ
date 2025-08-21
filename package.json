@@ -33,6 +33,7 @@
     "expo-font": "*",
     "expo-linear-gradient": "*",
     "expo-linking": "*",
+    "expo-notifications": "*",
     "expo-router": "*",
     "expo-splash-screen": "*",
     "expo-sqlite": "*",
