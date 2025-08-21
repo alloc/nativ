@@ -36,6 +36,7 @@
     "expo-haptics": "*",
     "expo-linear-gradient": "*",
     "expo-linking": "*",
+    "expo-localization": "*",
     "expo-notifications": "*",
     "expo-router": "*",
     "expo-splash-screen": "*",
