@@ -1,7 +1,7 @@
 import { command } from 'cmd-ts'
-import { execSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { spawnSync as $ } from 'picospawn'
 
 export default command({
   name: 'install',
@@ -19,7 +19,8 @@ export default command({
 
     // Install expo first
     console.log(`\npnpm add expo@"${peerDeps.expo}"`)
-    execSync(`pnpm add expo@"${peerDeps.expo}"`, { stdio: 'inherit' })
+    $(`pnpm add expo@"${peerDeps.expo}"`)
+
     delete peerDeps.expo
 
     // Get remaining dependencies
@@ -27,7 +28,7 @@ export default command({
       .map(([key, value]) => (value === '*' ? key : `${key}@"${value}"`))
       .join(' ')
 
-    execSync(`expo install --pnpm ${otherDeps}`, { stdio: 'inherit' })
+    $(`expo install --pnpm ${otherDeps}`)
 
     console.log('\n✅ Peer dependencies installed successfully!')
   },
