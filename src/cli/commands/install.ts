@@ -1,18 +1,13 @@
 import { command } from 'cmd-ts'
 import { execSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { join } from 'node:path'
 
 export default command({
   name: 'install',
   description: 'Install nativ peer dependencies using pnpm',
   args: {},
   handler: () => {
-    // Get current file directory in ES modules
-    const __filename = fileURLToPath(import.meta.url)
-    const __dirname = dirname(__filename)
-
     // Read nativ's package.json to get peer dependencies
     const packageJsonPath = join(__dirname, '../../../package.json')
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
