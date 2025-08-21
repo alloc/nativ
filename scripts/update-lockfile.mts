@@ -30,7 +30,9 @@ if (expoPeerDep && expoPeerDep.includes('alpha')) {
 
   // Update each expo dependency to @next version
   for (const dep of expoDeps) {
-    const nextVersion = $(`npm view ${dep}@next version`, { stdio: 'pipe' })
+    const nextVersion = $(`npm --silent view ${dep}@next version`, {
+      stdio: 'pipe',
+    })
     if (nextVersion) {
       console.log(`Updating ${dep} to ${nextVersion}`)
       packageJson.peerDependencies[dep] = nextVersion
