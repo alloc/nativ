@@ -47,6 +47,7 @@
     "react": "*",
     "react-dom": "*",
     "react-native": "*",
+    "react-native-gesture-handler": "*",
     "react-native-get-random-values": "*",
     "react-native-keyboard-controller": "*",
     "react-native-reanimated": "*",
