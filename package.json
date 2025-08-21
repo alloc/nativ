@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsup-node --clean",
     "dev": "tsup-node --watch",
-    "update-lockfile": "node scripts/update-lockfile.ts"
+    "update-lockfile": "node scripts/update-lockfile.mts"
   },
   "dependencies": {
     "babel-plugin-inline-import": "^3.0.0",

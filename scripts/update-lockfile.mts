@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs'
 import { join } from 'path'
 import { spawnSync as $ } from 'picospawn'
+import { fileURLToPath } from 'url'
 
 const gitStatus = $('git status --porcelain', { stdio: 'pipe' })
 console.log({ gitStatus })
@@ -9,6 +10,8 @@ if (gitStatus) {
   console.error('⚠️ Git repo must be clean')
   process.exit(1)
 }
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 const packageJsonPath = join(__dirname, '..', 'package.json')
 const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'))
