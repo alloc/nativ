@@ -2,7 +2,6 @@ import { command } from 'cmd-ts'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { spawnSync as $ } from 'picospawn'
-import { pick } from 'radashi'
 
 export default command({
   name: 'install',
@@ -30,8 +29,14 @@ export default command({
       ([name]) => name !== 'expo' && !pnpmDeps.includes(name)
     )
 
-    $('pnpm install', pnpmDeps.map(name => `${name}@${peerDeps[name]}`))
-    $('expo install --pnpm', otherDeps.map(([key, value]) => `${key}@${value}`))
+    $(
+      'pnpm install',
+      pnpmDeps.map(name => `${name}@${peerDeps[name]}`)
+    )
+    $(
+      'expo install --pnpm',
+      otherDeps.map(([key, value]) => `${key}@${value}`)
+    )
 
     console.log('\n✔︎ Peer dependencies installed.')
   },
