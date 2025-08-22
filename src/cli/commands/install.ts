@@ -11,31 +11,40 @@ export default command({
     // Read nativ's package.json to get peer dependencies
     const packageJsonPath = join(__dirname, '../../package.json')
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
-    const peerDeps = packageJson.peerDependencies || {}
+    const peerDeps: Record<string, string> = packageJson.peerDependencies || {}
 
     // Use our fork, but still use @shopify/restyle as the package name.
     peerDeps['@shopify/restyle'] =
       'npm:@alloc/restyle@' + peerDeps['@shopify/restyle']
 
-    // Install an exact version of Expo.
-    $(`pnpm install -E expo@${peerDeps.expo}`)
-
     // These dependencies must be installed with pnpm, not expo.
-    const pnpmDeps = ['@shopify/restyle']
+    const pnpmDeps = Object.keys(peerDeps).filter(name =>
+      peerDeps[name].startsWith('npm:')
+    )
+
+    // These dependencies use a prerelease, so we need to install an exact version.
+    const exactDeps = Object.keys(peerDeps).filter(
+      name =>
+        !pnpmDeps.includes(name) &&
+        (name === 'expo' || peerDeps[name].includes('-'))
+    )
 
     // These dependencies are installed with expo install, which ensures
     // only compatible versions are installed.
-    const otherDeps = Object.entries(peerDeps).filter(
-      ([name]) => name !== 'expo' && !pnpmDeps.includes(name)
+    const otherDeps = Object.keys(peerDeps).filter(
+      name => !pnpmDeps.includes(name) && !exactDeps.includes(name)
     )
 
+    $(
+      `pnpm install -E ${exactDeps.map(([name, version]) => `${name}@${version}`).join(' ')}`
+    )
     $(
       'pnpm install',
       pnpmDeps.map(name => `${name}@${peerDeps[name]}`)
     )
     $(
       'expo install --pnpm',
-      otherDeps.map(([key, value]) => `${key}@${value}`)
+      otherDeps.map(name => `${name}@${peerDeps[name]}`)
     )
 
     console.log('\n✔︎ Peer dependencies installed.')
