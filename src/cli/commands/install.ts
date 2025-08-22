@@ -59,9 +59,8 @@ async function resolveNpmVersion(name: string, version: string) {
         error: { code: string; summary: string; detail: string }
       }
 
-  const { stdout: response } = await spawn<VersionResponse>(
-    `npm view --silent ${name}@${version} version --json`,
-    { stdio: 'pipe', json: true }
+  const { stdout: response } = await spawn.json<VersionResponse>(
+    `npm view ${name}@${version} version --json`
   )
 
   if (Array.isArray(response)) {
