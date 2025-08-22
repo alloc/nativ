@@ -19,11 +19,13 @@ export default command({
       'npm:@alloc/restyle@' + peerDeps['@shopify/restyle']
 
     // These dependencies must be installed with pnpm, not expo.
-    const pnpmDeps = pick(peerDeps, name => peerDeps[name].startsWith('npm:'))
+    const pnpmDeps = pick(peerDeps, (_, name) =>
+      peerDeps[name].startsWith('npm:')
+    )
 
     // These dependencies are installed with expo install, which ensures
     // only compatible versions are installed.
-    const otherDeps = pick(peerDeps, name => !pnpmDeps[name])
+    const otherDeps = pick(peerDeps, (_, name) => !pnpmDeps[name])
 
     // These dependencies use a prerelease, so we need to install an exact version.
     for (const name of Object.keys(otherDeps)) {
