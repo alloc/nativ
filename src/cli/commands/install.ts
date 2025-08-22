@@ -36,7 +36,8 @@ export default command({
     )
 
     $(
-      `pnpm install -E ${exactDeps.map(([name, version]) => `${name}@${version}`).join(' ')}`
+      'pnpm install -E',
+      exactDeps.map(name => `${name}@${peerDeps[name]}`)
     )
     $(
       'pnpm install',
