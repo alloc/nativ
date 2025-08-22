@@ -72,11 +72,6 @@
     "babel-preset.js"
   ],
   "exports": {
-    ".": {
-      "react-native": "./src/index.ts",
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
     "./ui": {
       "react-native": "./src/ui/index.ts",
       "types": "./dist/ui.d.ts",
