@@ -9,8 +9,5 @@ module.exports = root => {
   // Allow importing SQL files, for Drizzle migrations.
   config.resolver.sourceExts.push('sql')
 
-  // Enable resolution of package "exports" fields.
-  config.resolver.unstable_enablePackageExports = true
-
   return config
 }
