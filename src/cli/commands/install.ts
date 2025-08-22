@@ -36,6 +36,9 @@ export default command({
       }
     }
 
+    // Expo prefers ~ to be present, instead of an exact version.
+    pnpmDeps.expo = '~' + pnpmDeps.expo
+
     $(
       'pnpm install',
       Object.entries(pnpmDeps).map(([name, version]) => `${name}@${version}`)
