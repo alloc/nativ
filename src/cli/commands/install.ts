@@ -40,7 +40,7 @@ export default command({
     pnpmDeps.expo = '~' + pnpmDeps.expo
 
     $(
-      'pnpm install',
+      'pnpm install --save-exact',
       Object.entries(pnpmDeps).map(([name, version]) => `${name}@${version}`)
     )
     $(
