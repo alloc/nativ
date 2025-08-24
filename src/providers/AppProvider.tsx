@@ -3,14 +3,17 @@ import {
   DefaultTheme,
   ThemeProvider as NavigationThemeProvider,
 } from '@react-navigation/native'
-import { ThemeProvider as RestyleThemeProvider } from '@shopify/restyle'
+import {
+  BaseTheme,
+  ThemeProvider as RestyleThemeProvider,
+} from '@shopify/restyle'
 import { StatusBar } from 'expo-status-bar'
 import { ReactNode } from 'react'
 import { useColorScheme } from 'react-native'
 import { DatabaseProvider } from './DatabaseProvider'
 import { FontProvider } from './FontProvider'
 
-export function AppProvider<Theme>({
+export function AppProvider<Theme extends BaseTheme>({
   theme,
   fonts,
   db,
