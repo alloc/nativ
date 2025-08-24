@@ -1,4 +1,4 @@
-import { command } from 'cmd-ts'
+import { command, flag } from 'cmd-ts'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import spawn, { spawnSync as $ } from 'picospawn'
@@ -7,8 +7,13 @@ import { pick } from 'radashi'
 export default command({
   name: 'install',
   description: 'Install nativ peer dependencies using pnpm',
-  args: {},
-  handler: async () => {
+  args: {
+    noLockfile: flag({
+      long: 'no-lockfile',
+      description: 'Do not read or write the lockfile (forwarded to pnpm)',
+    }),
+  },
+  handler: async ({ noLockfile }) => {
     // Read nativ's package.json to get peer dependencies
     const packageJsonPath = join(__dirname, '../../package.json')
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
@@ -42,14 +47,18 @@ export default command({
     // Expo prefers ~ to be present, instead of an exact version.
     pnpmDeps.expo = '~' + pnpmDeps.expo
 
-    $(
-      'pnpm install --save-exact',
-      Object.entries(pnpmDeps).map(([name, version]) => `${name}@${version}`)
-    )
-    $(
-      'expo install --pnpm',
-      Object.entries(otherDeps).map(([name, version]) => `${name}@${version}`)
-    )
+    $('pnpm install --save-exact', [
+      ...Object.entries(pnpmDeps).map(
+        ([name, version]) => `${name}@${version}`
+      ),
+      noLockfile && '--no-lockfile',
+    ])
+    $('expo install --pnpm', [
+      ...Object.entries(otherDeps).map(
+        ([name, version]) => `${name}@${version}`
+      ),
+      noLockfile && ['--', '--no-lockfile'],
+    ])
 
     console.log('\n✔︎ Peer dependencies installed.')
   },
