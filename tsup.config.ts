@@ -3,7 +3,6 @@ import { defineConfig } from 'tsup'
 export default defineConfig({
   entry: {
     ui: 'src/ui/index.ts',
-    hooks: 'src/hooks/index.ts',
     providers: 'src/providers/index.ts',
     polyfills: 'src/polyfills/index.ts',
     'cli/main': 'src/cli/main.ts',

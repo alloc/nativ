@@ -202,24 +202,6 @@ You can find more details about each component in the links below:
   - [`KeyboardControllerView`](https://kirillzyusko.github.io/react-native-keyboard-controller/docs/api/views/keyboard-controller-view) - A plain react-native `View` with some additional methods and props
   - [`KeyboardStickyView`](https://kirillzyusko.github.io/react-native-keyboard-controller/docs/api/components/keyboard-sticky-view) - Seamlessly ensures that a designated view sticks to the keyboard's movements, maintaining visibility and interaction
 
-### Hooks
-
-```typescript
-import { useAsync, useDoubleTap } from 'nativ/hooks'
-
-// Async operations with automatic abort handling
-const asyncFn = useAsync(
-  signal => (id: string) => fetch(`/api/users/${id}`, { signal })
-)
-
-// Double tap detection
-const handleTap = useDoubleTap({
-  onDoubleTap: () => console.log('Double tap!'),
-  onSingleTap: () => console.log('Single tap!'),
-  delaySingle: true,
-})
-```
-
 ### Providers
 
 ```typescript
