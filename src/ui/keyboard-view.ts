@@ -1,28 +1,34 @@
 import { BaseTheme, createBox } from '@shopify/restyle'
+import { ComponentProps } from 'react'
 import {
   KeyboardAvoidingView,
-  KeyboardAvoidingViewProps,
   KeyboardAwareScrollView,
-  KeyboardAwareScrollViewProps,
   KeyboardBackgroundView,
-  KeyboardBackgroundViewProps,
-  KeyboardControllerProps,
   KeyboardControllerView,
   KeyboardStickyView,
-  KeyboardStickyViewProps,
 } from 'react-native-keyboard-controller'
 
 export const createKeyboardAvoidingView = <Theme extends BaseTheme>() =>
-  createBox<Theme, KeyboardAvoidingViewProps>(KeyboardAvoidingView)
+  createBox<Theme, ComponentProps<typeof KeyboardAvoidingView>>(
+    KeyboardAvoidingView
+  )
 
 export const createKeyboardAwareScrollView = <Theme extends BaseTheme>() =>
-  createBox<Theme, KeyboardAwareScrollViewProps>(KeyboardAwareScrollView)
+  createBox<Theme, ComponentProps<typeof KeyboardAwareScrollView>>(
+    KeyboardAwareScrollView
+  )
 
 export const createKeyboardBackgroundView = <Theme extends BaseTheme>() =>
-  createBox<Theme, KeyboardBackgroundViewProps>(KeyboardBackgroundView)
+  createBox<Theme, ComponentProps<typeof KeyboardBackgroundView>>(
+    KeyboardBackgroundView
+  )
 
 export const createKeyboardStickyView = <Theme extends BaseTheme>() =>
-  createBox<Theme, KeyboardStickyViewProps>(KeyboardStickyView)
+  createBox<Theme, ComponentProps<typeof KeyboardStickyView>>(
+    KeyboardStickyView
+  )
 
 export const createKeyboardControllerView = <Theme extends BaseTheme>() =>
-  createBox<Theme, KeyboardControllerProps>(KeyboardControllerView)
+  createBox<Theme, ComponentProps<typeof KeyboardControllerView>>(
+    KeyboardControllerView
+  )

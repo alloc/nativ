@@ -1,10 +1,10 @@
-import * as shopify from '@shopify/flash-list'
+import { FlashList, FlashListProps, FlashListRef } from '@shopify/flash-list'
 import { BaseTheme, BoxProps, createBox } from '@shopify/restyle'
 import { ReactNode, RefAttributes } from 'react'
 
 export const createFlashList = <Theme extends BaseTheme>() =>
-  createBox<Theme>(shopify.FlashList) as <TItem>(
+  createBox<Theme>(FlashList) as <TItem>(
     props: BoxProps<Theme> &
-      shopify.FlashListProps<TItem> &
-      RefAttributes<shopify.FlashListRef<TItem>>
+      FlashListProps<TItem> &
+      RefAttributes<FlashListRef<TItem>>
   ) => ReactNode
