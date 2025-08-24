@@ -130,13 +130,13 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       '@shopify/restyle':
-        specifier: npm:@alloc/restyle@*
-        version: '@alloc/restyle@2.5.2(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)'
+        specifier: npm:@alloc/restyle@^2.5.3
+        version: '@alloc/restyle@2.5.3(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)'
       '@types/node':
         specifier: ^24.3.0
         version: 24.3.0
       moti:
-        specifier: npm:@alloc/moti@*
+        specifier: npm:@alloc/moti@54.0.0-beta.1
         version: '@alloc/moti@54.0.0-beta.1(@emotion/is-prop-valid@0.8.8)(expo-linear-gradient@15.0.2(expo@54.0.0-preview.5)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react-native-reanimated@4.0.2(@babel/core@7.28.3)(react-native-worklets@0.4.1(@babel/core@7.28.3)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native-safe-area-context@5.6.1(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react@19.1.1)'
       prettier:
         specifier: ^3.6.2
@@ -179,8 +179,8 @@ packages:
   '@alloc/prettier-config@1.0.0':
     resolution: {integrity: sha512-xm50V1qxSdTh1O1fKA+gqcU605YSnxfq6HwtYSFU3fRsKMFnUSuSOxqSAPI7y2sRxqPed2EIuGmNn107LVQM6g==}
 
-  '@alloc/restyle@2.5.2':
-    resolution: {integrity: sha512-qBIjNcyorKWTI+bSKd1fuyggLwEalqr/mBlaItNErcIen7R7OeM0okRBlQepFNHvMdL47BAEIKRDkGk/osNTcg==}
+  '@alloc/restyle@2.5.3':
+    resolution: {integrity: sha512-RXn7FU+9Usv2R6t6tqmu6QtCUVayMO776s5O5OwxopSmmypJ32kARSEor2Q8ezt8PuhVM6PjO8UIr5V18WAKLw==}
     peerDependencies:
       react: '*'
       react-native: '*'
@@ -4209,7 +4209,7 @@ snapshots:
 
   '@alloc/prettier-config@1.0.0': {}
 
-  '@alloc/restyle@2.5.2(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)':
+  '@alloc/restyle@2.5.3(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)':
     dependencies:
       react: 19.1.1
       react-native: 0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1)
