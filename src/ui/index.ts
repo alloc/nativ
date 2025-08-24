@@ -1,4 +1,15 @@
-export { createPrimitives } from './primitives'
+export {
+  createImage,
+  createMotiImage,
+  createMotiPressable,
+  createMotiScrollView,
+  createMotiText,
+  createMotiView,
+  createPressable,
+  createScrollView,
+  createText,
+  createView,
+} from './primitives'
 
 export {
   createLinearGradient,

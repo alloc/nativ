@@ -105,13 +105,23 @@ export type Theme = typeof theme
 export { theme }
 ```
 
-### 3. Create UI primitives
+### 3. Create UI components
 
 ```typescript
-import { createPrimitives } from 'nativ/ui'
+import {
+  createView,
+  createText,
+  createPressable,
+  createMotiView,
+  createMotiPressable,
+} from 'nativ/ui'
 import { Theme } from './theme'
 
-export const { View, Text, MotiView, Pressable } = createPrimitives<Theme>()
+export const View = createView<Theme>()
+export const Text = createText<Theme>()
+export const Pressable = createPressable<Theme>()
+export const MotiView = createMotiView<Theme>()
+export const MotiPressable = createMotiPressable<Theme>()
 ```
 
 ### 4. Set up your app
@@ -148,23 +158,44 @@ function AppContent() {
 ### UI Primitives
 
 ```typescript
-import { createPrimitives } from 'nativ/ui'
+import {
+  createView,
+  createText,
+  createImage,
+  createPressable,
+  createScrollView,
+  createMotiView,
+  createMotiPressable,
+  createMotiText,
+  createMotiImage,
+  createMotiScrollView,
+} from 'nativ/ui'
 import { Theme } from './theme'
 
-const primitives = createPrimitives<Theme>()
+const View = createView<Theme>()
+const Text = createText<Theme>()
+const Image = createImage<Theme>()
+const Pressable = createPressable<Theme>()
+const ScrollView = createScrollView<Theme>()
+const MotiView = createMotiView<Theme>()
+const MotiPressable = createMotiPressable<Theme>()
+const MotiText = createMotiText<Theme>()
+const MotiImage = createMotiImage<Theme>()
+const MotiScrollView = createMotiScrollView<Theme>()
 ```
 
-Returns an object with the following components:
+Factory functions exported by `nativ/ui`:
 
-- `View` - Base layout component with Restyle props
-- `Text` - Typography component with theme variants
-- `Image` - Image component with styling
-- `Pressable` - Touchable component with styling
-- `ScrollView` - Scrollable container with styling
-- `MotiView` - Animated View with Moti integration
-- `MotiText` - Animated Text with Moti integration
-- `MotiImage` - Animated Image with Moti integration
-- `MotiScrollView` - Animated ScrollView with Moti integration
+- `createView` -> `View` (Base layout component with Restyle props)
+- `createText` -> `Text` (Typography with theme variants)
+- `createImage` -> `Image` (Image with styling)
+- `createPressable` -> `Pressable` (Touchable with styling)
+- `createScrollView` -> `ScrollView` (Scrollable container with styling)
+- `createMotiView` -> `MotiView` (Animated View with Moti integration)
+- `createMotiPressable` -> `MotiPressable` (Animated Pressable with Moti interactions)
+- `createMotiText` -> `MotiText` (Animated Text with Moti integration)
+- `createMotiImage` -> `MotiImage` (Animated Image with Moti integration)
+- `createMotiScrollView` -> `MotiScrollView` (Animated ScrollView with Moti integration)
 
 ### Additional UI Components
 
