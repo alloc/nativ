@@ -1,8 +1,8 @@
 import { BaseTheme, createBox, createText } from '@shopify/restyle'
-import * as moti from 'moti'
-import * as motiPressable from 'moti/interactions'
+import * as M from 'moti'
+import * as MI from 'moti/interactions'
 import { ComponentProps } from 'react'
-import * as reactNative from 'react-native'
+import * as RN from 'react-native'
 
 /**
  * Creates a set of primitive components that work with the provided
@@ -12,32 +12,28 @@ import * as reactNative from 'react-native'
 export function createPrimitives<Theme extends BaseTheme>() {
   const View = createBox<Theme>()
   const Text = createText<Theme>()
-  const Image = createBox<Theme, reactNative.ImageProps>(reactNative.Image)
-  const Pressable = createBox<Theme, reactNative.PressableProps>(
-    reactNative.Pressable
-  )
-  const ScrollView = createBox<Theme, reactNative.ScrollViewProps>(
-    reactNative.ScrollView
-  )
+  const Image = createBox<Theme, RN.ImageProps>(RN.Image)
+  const Pressable = createBox<Theme, RN.PressableProps>(RN.Pressable)
+  const ScrollView = createBox<Theme, RN.ScrollViewProps>(RN.ScrollView)
 
   // Moti-enhanced versions
-  const MotiView = createBox<Theme, ComponentProps<typeof moti.MotiView>>(
-    moti.MotiView
+  const MotiView = createBox<Theme, ComponentProps<typeof M.MotiView>>(
+    M.MotiView
   )
   const MotiPressable = createBox<
     Theme,
-    ComponentProps<typeof motiPressable.MotiPressable>
-  >(motiPressable.MotiPressable)
-  const MotiText = createText<Theme, ComponentProps<typeof moti.MotiText>>(
-    moti.MotiText
+    ComponentProps<typeof MI.MotiPressable>
+  >(MI.MotiPressable)
+  const MotiText = createText<Theme, ComponentProps<typeof M.MotiText>>(
+    M.MotiText
   )
-  const MotiImage = createBox<Theme, ComponentProps<typeof moti.MotiImage>>(
-    moti.MotiImage
+  const MotiImage = createBox<Theme, ComponentProps<typeof M.MotiImage>>(
+    M.MotiImage
   )
   const MotiScrollView = createBox<
     Theme,
-    ComponentProps<typeof moti.MotiScrollView>
-  >(moti.MotiScrollView)
+    ComponentProps<typeof M.MotiScrollView>
+  >(M.MotiScrollView)
 
   return {
     View,
