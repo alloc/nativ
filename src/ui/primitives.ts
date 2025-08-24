@@ -3,6 +3,7 @@ import {
   createBox,
   createText as createRestyleText,
 } from '@shopify/restyle'
+import * as ER from 'expo-router'
 import * as M from 'moti'
 import * as MI from 'moti/interactions'
 import { ComponentProps } from 'react'
@@ -31,3 +32,6 @@ export const createScrollView = <Theme extends BaseTheme>() =>
   createBox<Theme, RN.ScrollViewProps>(RN.ScrollView)
 export const createMotiScrollView = <Theme extends BaseTheme>() =>
   createBox<Theme, ComponentProps<typeof M.MotiScrollView>>(M.MotiScrollView)
+
+export const createLink = <Theme extends BaseTheme>() =>
+  createBox<Theme, ER.LinkProps>(ER.Link)
