@@ -1,5 +1,6 @@
 import { BaseTheme, createBox, createText } from '@shopify/restyle'
 import * as moti from 'moti'
+import * as motiPressable from 'moti/interactions'
 import { ComponentProps } from 'react'
 import * as reactNative from 'react-native'
 
@@ -23,6 +24,10 @@ export function createPrimitives<Theme extends BaseTheme>() {
   const MotiView = createBox<Theme, ComponentProps<typeof moti.MotiView>>(
     moti.MotiView
   )
+  const MotiPressable = createBox<
+    Theme,
+    ComponentProps<typeof motiPressable.MotiPressable>
+  >(motiPressable.MotiPressable)
   const MotiText = createText<Theme, ComponentProps<typeof moti.MotiText>>(
     moti.MotiText
   )
@@ -36,13 +41,14 @@ export function createPrimitives<Theme extends BaseTheme>() {
 
   return {
     View,
-    Text,
-    Image,
-    Pressable,
-    ScrollView,
     MotiView,
+    Text,
     MotiText,
+    Image,
     MotiImage,
+    Pressable,
+    MotiPressable,
+    ScrollView,
     MotiScrollView,
   }
 }
