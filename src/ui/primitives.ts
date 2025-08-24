@@ -34,4 +34,4 @@ export const createMotiScrollView = <Theme extends BaseTheme>() =>
   createBox<Theme, ComponentProps<typeof M.MotiScrollView>>(M.MotiScrollView)
 
 export const createLink = <Theme extends BaseTheme>() =>
-  createBox<Theme, ER.LinkProps>(ER.Link)
+  createRestyleText<Theme, ER.LinkProps>(ER.Link)
