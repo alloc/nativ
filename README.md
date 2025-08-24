@@ -1,9 +1,79 @@
 # nativ
 
-Core utilities and components for React Native apps built with Expo, Restyle, and Moti.
+Core utilities and components for React Native apps.
 
 > [!NOTE]
 > It's recommended to use the [nativ-template](https://github.com/alloc/nativ-template) when creating a new project.
+
+## What's Included
+
+Nativ prescribes a comprehensive React Native stack with the following technologies:
+
+### Core Framework
+
+- **[Expo](https://expo.dev/)** (`v54`) - Platform and tooling for universal React Native apps
+- **[React Native](https://reactnative.dev/)** - Build native mobile apps using React
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript development
+- **[valtio](https://valtio.pmnd.rs/)** - Proxy-state library for React with minimal boilerplate
+
+### Navigation & Routing
+
+- **[expo-router](https://docs.expo.dev/router/introduction/)** (`v6`) - File-based routing for Expo apps.  
+  Builds upon these packages:
+  - **[@react-navigation/native](https://reactnavigation.org/)** (`v7`) - Routing and navigation library
+  - **[react-native-screens](https://github.com/software-mansion/react-native-screens)** - Native navigation primitives
+- **[react-native-safe-area-context](https://github.com/th3rdwave/react-native-safe-area-context)** - Safe area insets handling
+
+### UI & Styling
+
+- **[@shopify/restyle](https://github.com/Shopify/restyle)** - Type-enforced system for building UI components with theme-based styling (using `@alloc/restyle` fork)
+- **[@shopify/flash-list](https://shopify.github.io/flash-list/)** - High-performance list component for React Native
+- **[expo-linear-gradient](https://docs.expo.dev/versions/latest/sdk/linear-gradient/)** - Linear gradient view component
+- **[expo-status-bar](https://docs.expo.dev/versions/latest/sdk/status-bar/)** - Status bar configuration
+- **[expo-splash-screen](https://docs.expo.dev/versions/latest/sdk/splash-screen/)** - Splash screen management
+- **[react-native-keyboard-controller](https://kirillzyusko.github.io/react-native-keyboard-controller/)** - Comprehensive keyboard handling with KeyboardAvoidingView, KeyboardAwareScrollView, and more
+
+### Animation
+
+- **[moti](https://moti.fyi/)** - Universal animation library for React Native (using `@alloc/moti` fork).  
+  Builds upon these packages:
+  - **[react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/)** - High-performance animations and gestures
+  - **[react-native-worklets](https://github.com/margelo/react-native-worklets)** - High-performance JavaScript worklets for React Native
+- **[react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/)** - Declarative API exposing platform native touch and gesture system
+
+### Database & ORM
+
+- **[expo-sqlite](https://docs.expo.dev/versions/latest/sdk/sqlite/)** - Local SQLite database access
+- **[drizzle-orm](https://orm.drizzle.team/)** (`v1`) - Lightweight TypeScript ORM with zero dependencies
+- **[drizzle-plus](https://github.com/alloc/drizzle-plus)** - Utility extensions for Drizzle ORM including count(), nest(), caseWhen(), and JSON helpers
+
+### Utilities & Helpers
+
+- **[radashi](https://radashi.js.org/)** - Modern TypeScript utility toolkit (Lodash alternative)
+- **[react-native-get-random-values](https://github.com/LinusU/react-native-get-random-values)** - Polyfill for crypto.getRandomValues()
+
+### Device & Platform APIs
+
+- **[expo-constants](https://docs.expo.dev/versions/latest/sdk/constants/)** - System and app constants
+- **[expo-device](https://docs.expo.dev/versions/latest/sdk/device/)** - Device information and capabilities
+- **[expo-font](https://docs.expo.dev/versions/latest/sdk/font/)** - Font loading and management
+- **[expo-haptics](https://docs.expo.dev/versions/latest/sdk/haptics/)** - Haptic feedback
+- **[expo-linking](https://docs.expo.dev/versions/latest/sdk/linking/)** - Deep linking and URL handling
+- **[expo-localization](https://docs.expo.dev/versions/latest/sdk/localization/)** - Locale and language information
+- **[expo-notifications](https://docs.expo.dev/versions/latest/sdk/notifications/)** - Local and push notifications
+
+### Build & Development Tools
+
+- **[react-compiler](https://react.dev/learn/react-compiler/introduction)** - Automatic memoization at compile time
+- **[babel-preset-expo](https://github.com/expo/expo/tree/main/packages/babel-preset-expo)** - Babel preset for Expo projects
+- **[expo-build-properties](https://docs.expo.dev/versions/latest/sdk/build-properties/)** - Configure native build properties
+- **[expo-dev-client](https://docs.expo.dev/develop/development-builds/introduction/)** - Development client for custom native code
+
+### Runtime Support
+
+- **[react](https://react.dev/)** - React library for building user interfaces
+- **[react-dom](https://react.dev/reference/react-dom)** - React DOM bindings (for web compatibility)
+- **[@types/react](https://www.npmjs.com/package/@types/react)** - TypeScript definitions for React
 
 ## Installation
 
