@@ -15,8 +15,10 @@ const packageJsonPath = join(__dirname, '..', 'package.json')
 const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'))
 const expoPeerDep = packageJson.peerDependencies?.expo
 
-if (expoPeerDep && expoPeerDep.includes('alpha')) {
-  console.log('• Found "alpha" in Expo version, updating Expo dependencies...')
+if (expoPeerDep && expoPeerDep.includes('-')) {
+  console.log(
+    '• Expo is using a prerelease version, updating Expo dependencies...'
+  )
 
   // Find all expo-prefixed dependencies in peerDependencies
   const expoDeps = Object.keys(packageJson.peerDependencies).filter(
@@ -68,7 +70,7 @@ if (lockfileStatus) {
   console.log('• No changes to lockfile, nothing to commit')
 }
 
-if (expoPeerDep && expoPeerDep.includes('alpha')) {
+if (expoPeerDep && expoPeerDep.includes('-')) {
   $('git checkout HEAD -- package.json')
 }
 
