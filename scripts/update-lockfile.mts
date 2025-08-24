@@ -3,7 +3,7 @@ import { join } from 'path'
 import { spawnSync as $ } from 'picospawn'
 import { fileURLToPath } from 'url'
 
-const gitStatus = $('git status --porcelain', { stdio: 'pipe' })
+const gitStatus = $('git status --porcelain -uno', { stdio: 'pipe' })
 if (gitStatus) {
   console.error('⚠️  Git repo must be clean')
   process.exit(1)
