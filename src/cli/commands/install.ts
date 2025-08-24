@@ -18,6 +18,9 @@ export default command({
     peerDeps['@shopify/restyle'] =
       'npm:@alloc/restyle@' + peerDeps['@shopify/restyle']
 
+    // Use our fork, but still use moti as the package name.
+    peerDeps['moti'] = 'npm:@alloc/moti@' + peerDeps['moti']
+
     // These dependencies must be installed with pnpm, not expo.
     const pnpmDeps = pick(peerDeps, (_, name) =>
       peerDeps[name].startsWith('npm:')
