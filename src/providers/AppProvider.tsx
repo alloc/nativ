@@ -7,23 +7,30 @@ import {
   BaseTheme,
   ThemeProvider as RestyleThemeProvider,
 } from '@shopify/restyle'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator'
 import { StatusBar } from 'expo-status-bar'
 import { ReactNode } from 'react'
 import { useColorScheme } from 'react-native'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { DatabaseProvider } from './DatabaseProvider'
 import { FontProvider } from './FontProvider'
 
+type UseMigrationsParams = Parameters<typeof useMigrations>
+
 export function AppProvider<Theme extends BaseTheme>({
-  theme,
-  fonts,
   db,
+  fonts,
   migrations,
+  queryClient,
+  theme,
   children,
 }: {
-  theme: Theme
+  db: UseMigrationsParams[0]
   fonts: Record<string, any>
-  db?: any
-  migrations?: any
+  migrations: UseMigrationsParams[1]
+  queryClient: QueryClient
+  theme: Theme
   children: ReactNode
 }) {
   const colorScheme = useColorScheme()
@@ -34,7 +41,13 @@ export function AppProvider<Theme extends BaseTheme>({
       <NavigationThemeProvider
         value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
-        <RestyleThemeProvider theme={theme}>{children}</RestyleThemeProvider>
+        <GestureHandlerRootView>
+          <QueryClientProvider client={queryClient}>
+            <RestyleThemeProvider theme={theme}>
+              {children}
+            </RestyleThemeProvider>
+          </QueryClientProvider>
+        </GestureHandlerRootView>
       </NavigationThemeProvider>
     </FontProvider>
   )
