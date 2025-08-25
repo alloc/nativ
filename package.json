@@ -85,6 +85,11 @@
       "types": "./dist/providers.d.ts",
       "default": "./dist/providers.js"
     },
+    "./hooks": {
+      "react-native": "./src/hooks/index.ts",
+      "types": "./dist/hooks.d.ts",
+      "default": "./dist/hooks.js"
+    },
     "./polyfills": {
       "react-native": "./src/polyfills/index.ts",
       "types": "./dist/polyfills.d.ts",

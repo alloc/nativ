@@ -4,6 +4,7 @@ export default defineConfig({
   entry: {
     ui: 'src/ui/index.ts',
     providers: 'src/providers/index.ts',
+    hooks: 'src/hooks/index.ts',
     polyfills: 'src/polyfills/index.ts',
     'cli/main': 'src/cli/main.ts',
   },
