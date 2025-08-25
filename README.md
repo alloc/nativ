@@ -15,6 +15,7 @@ Nativ prescribes a comprehensive React Native stack with the following technolog
 - **[React Native](https://reactnative.dev/)** - Build native mobile apps using React
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript development
 - **[valtio](https://valtio.pmnd.rs/)** - Proxy-state library for React with minimal boilerplate
+- **[@tanstack/react-query](https://tanstack.com/query)** - Powerful data synchronization for React with caching, background updates, and optimistic updates
 
 ### Navigation & Routing
 
