@@ -109,8 +109,12 @@ export default command({
 
     console.log()
 
+    // If nothing is staged, stage all changes.
+    if (!checkForStagedChanges()) {
+      $('git add -u .')
+    }
+
     // Commit and tag the upgrade.
-    $('git add -u .')
     $('git commit --amend --no-edit --no-verify')
     $('git tag', [`nativ-template@${commit}`])
 
@@ -121,3 +125,7 @@ export default command({
     console.log('\n✔︎ Template successfully upgraded!')
   },
 })
+
+function checkForStagedChanges() {
+  return $('git diff --cached --name-only', { stdio: 'pipe' }) !== ''
+}
