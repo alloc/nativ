@@ -28,7 +28,7 @@ Nativ prescribes a comprehensive React Native stack with the following technolog
 ### UI & Styling
 
 - **[@shopify/restyle](https://github.com/Shopify/restyle)** - Type-enforced system for building UI components with theme-based styling (using `@alloc/restyle` fork)
-- **[@shopify/flash-list](https://shopify.github.io/flash-list/)** - High-performance list component for React Native
+- **[@shopify/flash-list](https://shopify.github.io/flash-list/)** (`v2`) - High-performance list component for React Native
 - **[expo-linear-gradient](https://docs.expo.dev/versions/latest/sdk/linear-gradient/)** - Linear gradient view component
 - **[expo-status-bar](https://docs.expo.dev/versions/latest/sdk/status-bar/)** - Status bar configuration
 - **[expo-splash-screen](https://docs.expo.dev/versions/latest/sdk/splash-screen/)** - Splash screen management
@@ -72,7 +72,7 @@ Nativ prescribes a comprehensive React Native stack with the following technolog
 
 ### Runtime Support
 
-- **[react](https://react.dev/)** - React library for building user interfaces
+- **[react](https://react.dev/)** (`v19`) - React library for building user interfaces
 - **[react-dom](https://react.dev/reference/react-dom)** - React DOM bindings (for web compatibility)
 - **[@types/react](https://www.npmjs.com/package/@types/react)** - TypeScript definitions for React
 
