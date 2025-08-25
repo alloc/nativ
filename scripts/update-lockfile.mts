@@ -3,6 +3,11 @@ import { join } from 'path'
 import { spawnSync as $ } from 'picospawn'
 import { fileURLToPath } from 'url'
 
+if ($('git status --porcelain -uno -- package.json', { stdio: 'pipe' })) {
+  console.error('⚠️  Uncommitted changes to package.json')
+  process.exit(1)
+}
+
 $('git reset')
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
@@ -56,12 +61,17 @@ const lockfileStatus = $('git status --porcelain pnpm-lock.yaml', {
 })
 if (lockfileStatus) {
   $('git add pnpm-lock.yaml')
-  $('git commit -m %s --author %s', [
-    'chore(pnpm): update lockfile',
-    'pnpm <https://pnpm.io>',
-  ])
-  console.log()
-  console.log('• Lockfile committed successfully')
+
+  if (process.argv.includes('--no-commit')) {
+    console.log('• Skipping commit')
+  } else {
+    $('git commit -m %s --author %s', [
+      'chore(pnpm): update lockfile',
+      'pnpm <https://pnpm.io>',
+    ])
+    console.log()
+    console.log('• Lockfile committed successfully')
+  }
 } else {
   console.log('• No changes to lockfile, nothing to commit')
 }
