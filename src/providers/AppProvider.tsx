@@ -7,12 +7,16 @@ import {
   BaseTheme,
   ThemeProvider as RestyleThemeProvider,
 } from '@shopify/restyle'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import {
+  focusManager,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator'
 import { useFonts } from 'expo-font'
 import { StatusBar } from 'expo-status-bar'
 import { ReactNode, useEffect, useLayoutEffect } from 'react'
-import { useColorScheme } from 'react-native'
+import { AppState, Platform, useColorScheme } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 type UseMigrationsParams = Parameters<typeof useMigrations>
@@ -45,7 +49,6 @@ export type AppProviderProps<Theme extends BaseTheme> = {
    * - Database migrations have run
    */
   onLoad: () => void
-  children: ReactNode
 }
 
 export function AppProvider<Theme extends BaseTheme>({
@@ -56,8 +59,20 @@ export function AppProvider<Theme extends BaseTheme>({
   theme,
   onLoad,
   children,
-}: AppProviderProps<Theme>) {
+}: AppProviderProps<Theme> & {
+  children: ReactNode
+}) {
   const colorScheme = useColorScheme()
+
+  // Enable auto refetch on app focus
+  useEffect(() => {
+    if (Platform.OS !== 'web') {
+      const subscription = AppState.addEventListener('change', status =>
+        focusManager.setFocused(status === 'active')
+      )
+      return () => subscription.remove()
+    }
+  }, [])
 
   const migrationState = useMigrations(db, migrations)
   const [fontsLoaded, fontsError] = useFonts(fonts)
