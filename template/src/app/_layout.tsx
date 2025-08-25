@@ -1,7 +1,6 @@
 import 'nativ/polyfills'
 
 import { Stack } from 'expo-router'
-import { StatusBar } from 'expo-status-bar'
 import { AppProvider } from 'nativ/providers'
 
 import { db } from '~/db/client'
@@ -15,7 +14,6 @@ const fonts = {
 export default function AppLayout() {
   return (
     <AppProvider theme={theme} fonts={fonts} db={db} migrations={migrations}>
-      <StatusBar style="auto" />
       <Stack
         screenOptions={{
           headerShown: false,
