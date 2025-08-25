@@ -6,6 +6,6 @@
 [subrepo]
 	remote = https://github.com/alloc/nativ-template
 	branch = main
-	commit = 
+	commit = 11c3563a11020d474e9d0d7b383bbd88db93175d
 	method = rebase
 	cmdver = 0.4.9
