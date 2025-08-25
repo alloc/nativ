@@ -1,0 +1,14 @@
+{
+  "extends": "expo/tsconfig.base.json",
+  "include": ["./", "../.expo/types/**/*.ts", "../expo-env.d.ts"],
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./*", "../assets/*"]
+    },
+    "strict": true,
+    "noErrorTruncation": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "types": []
+  }
+}

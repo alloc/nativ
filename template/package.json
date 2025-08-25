@@ -1,0 +1,22 @@
+{
+  "name": "my-nativ-app",
+  "main": "expo-router/entry",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "android:clean": "expo prebuild -p android --clean",
+    "ios:clean": "expo prebuild -p ios --clean"
+  },
+  "dependencies": {
+    "nativ": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "*",
+    "@types/node": "*",
+    "drizzle-kit": ">=1.0.0-beta"
+  }
+}
