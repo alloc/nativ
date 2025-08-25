@@ -38,7 +38,7 @@ Nativ prescribes a comprehensive React Native stack with the following technolog
 
 - **[moti](https://moti.fyi/)** - Universal animation library for React Native (using `@alloc/moti` fork).  
   Builds upon these packages:
-  - **[react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/)** - High-performance animations and gestures
+  - **[react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/)** (`v4`) - High-performance animations and gestures
   - **[react-native-worklets](https://github.com/margelo/react-native-worklets)** - High-performance JavaScript worklets for React Native
 - **[react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/)** - Declarative API exposing platform native touch and gesture system
 
