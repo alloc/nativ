@@ -2,9 +2,8 @@ import 'nativ/polyfills'
 
 import { SplashScreen, Stack } from 'expo-router'
 import { AppProvider } from 'nativ/providers'
-import { ActivityIndicator } from 'react-native'
-
 import { Suspense } from 'react'
+import { ActivityIndicator } from 'react-native'
 import { db } from '~/db/client'
 import migrations from '~/db/migrations'
 import { queryClient } from '~/queryClient'
