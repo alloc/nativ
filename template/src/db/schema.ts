@@ -9,7 +9,3 @@ export const users = sqliteTable('users', {
     .notNull()
     .$defaultFn(() => new Date()),
 })
-
-// Export schema for type inference
-export type User = typeof users.$inferSelect
-export type NewUser = typeof users.$inferInsert

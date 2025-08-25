@@ -9,7 +9,7 @@ import {
   createText,
   createView,
 } from 'nativ/ui'
-import type { Theme } from './theme'
+import type { Theme } from '~/theme'
 
 export const View = createView<Theme>()
 export const Text = createText<Theme>()

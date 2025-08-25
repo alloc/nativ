@@ -1,6 +1,14 @@
 {
-  "exclude": ["src"],
+  "extends": "expo/tsconfig.base.json",
+  "include": [".", ".expo/types/**/*.ts", "expo-env.d.ts"],
   "compilerOptions": {
-    "strict": true
+    "paths": {
+      "~/*": ["./src/core/*", "./assets/*"],
+      "~/db/*": ["./src/db/*", "./drizzle/*"]
+    },
+    "strict": true,
+    "noErrorTruncation": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   }
 }
