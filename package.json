@@ -19,6 +19,7 @@
   },
   "peerDependencies": {
     "@react-navigation/native": "^7.1.8",
+    "@react-native-async-storage/async-storage": "*",
     "@react-native-community/netinfo": "*",
     "@shopify/flash-list": "*",
     "@shopify/restyle": "*",
