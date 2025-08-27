@@ -33,6 +33,7 @@ Nativ prescribes a comprehensive React Native stack with the following technolog
 - **[expo-status-bar](https://docs.expo.dev/versions/latest/sdk/status-bar/)** - Status bar configuration
 - **[expo-splash-screen](https://docs.expo.dev/versions/latest/sdk/splash-screen/)** - Splash screen management
 - **[react-native-keyboard-controller](https://kirillzyusko.github.io/react-native-keyboard-controller/)** - Comprehensive keyboard handling with KeyboardAvoidingView, KeyboardAwareScrollView, and more
+- **[@react-native-masked-view/masked-view](https://docs.expo.dev/versions/latest/sdk/masked-view/)** - Masked view component for creating visual effects and overlays
 
 ### Animation
 
@@ -52,6 +53,8 @@ Nativ prescribes a comprehensive React Native stack with the following technolog
 
 - **[radashi](https://radashi.js.org/)** - Modern TypeScript utility toolkit (Lodash alternative)
 - **[react-native-get-random-values](https://github.com/LinusU/react-native-get-random-values)** - Polyfill for crypto.getRandomValues()
+- **[@react-native-async-storage/async-storage](https://docs.expo.dev/versions/latest/sdk/async-storage/)** - Asynchronous, unencrypted, persistent, key-value storage system
+- **[@react-native-community/netinfo](https://docs.expo.dev/versions/latest/sdk/netinfo/)** - Network connectivity information and monitoring
 
 ### Device & Platform APIs
 
