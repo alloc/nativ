@@ -21,6 +21,7 @@
     "@react-navigation/native": "^7.1.8",
     "@react-native-async-storage/async-storage": "*",
     "@react-native-community/netinfo": "*",
+    "@react-native-masked-view/masked-view": "*",
     "@shopify/flash-list": "*",
     "@shopify/restyle": "*",
     "@tanstack/react-query": "*",
