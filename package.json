@@ -79,8 +79,33 @@
   "exports": {
     "./ui": {
       "react-native": "./src/ui/index.ts",
-      "types": "./dist/ui.d.ts",
-      "default": "./dist/ui.js"
+      "types": "./dist/ui/index.d.ts",
+      "default": "./dist/ui/index.js"
+    },
+    "./ui/flash-list": {
+      "react-native": "./src/ui/flash-list.ts",
+      "types": "./dist/ui/flash-list.d.ts",
+      "default": "./dist/ui/flash-list.js"
+    },
+    "./ui/gradient-border": {
+      "react-native": "./src/ui/gradient-border.tsx",
+      "types": "./dist/ui/gradient-border.d.ts",
+      "default": "./dist/ui/gradient-border.js"
+    },
+    "./ui/keyboard-view": {
+      "react-native": "./src/ui/keyboard-view.ts",
+      "types": "./dist/ui/keyboard-view.d.ts",
+      "default": "./dist/ui/keyboard-view.js"
+    },
+    "./ui/linear-gradient": {
+      "react-native": "./src/ui/linear-gradient.ts",
+      "types": "./dist/ui/linear-gradient.d.ts",
+      "default": "./dist/ui/linear-gradient.js"
+    },
+    "./ui/masked-view": {
+      "react-native": "./src/ui/masked-view.ts",
+      "types": "./dist/ui/masked-view.d.ts",
+      "default": "./dist/ui/masked-view.js"
     },
     "./providers": {
       "react-native": "./src/providers/index.ts",

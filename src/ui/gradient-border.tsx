@@ -10,7 +10,6 @@ import Animated, {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated'
-import { createView } from './index'
 
 export type GradientBorderProps<Theme extends BaseTheme> = {
   sliderWidth?: number
@@ -25,7 +24,7 @@ export type GradientBorderProps<Theme extends BaseTheme> = {
   }
 }
 
-const View = createView<any>()
+const View = createBox<any>()
 type View = import('react-native').View
 
 /**

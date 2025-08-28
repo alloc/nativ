@@ -7,7 +7,7 @@ import { Link } from 'expo-router'
 import { MotiImage, MotiScrollView, MotiText, MotiView } from 'moti'
 import { MotiPressable } from 'moti/interactions'
 import { ComponentProps } from 'react'
-import { Image, Pressable, ScrollView } from 'react-native'
+import { Image, Pressable, ScrollView, TextInput } from 'react-native'
 
 export const createView = <Theme extends BaseTheme>() => createBox<Theme>()
 export const createMotiView = <Theme extends BaseTheme>() =>
@@ -33,22 +33,8 @@ export const createScrollView = <Theme extends BaseTheme>() =>
 export const createMotiScrollView = <Theme extends BaseTheme>() =>
   createBox<Theme, ComponentProps<typeof MotiScrollView>>(MotiScrollView)
 
+export const createTextInput = <Theme extends BaseTheme>() =>
+  createBox<Theme, ComponentProps<typeof TextInput>>(TextInput)
+
 export const createLink = <Theme extends BaseTheme>() =>
   createRestyleText<Theme, ComponentProps<typeof Link>>(Link)
-
-export {
-  createLinearGradient,
-  type LinearGradientProps,
-} from './linear-gradient'
-
-export { createFlashList } from './flash-list'
-
-export {
-  createKeyboardAvoidingView,
-  createKeyboardAwareScrollView,
-  createKeyboardBackgroundView,
-  createKeyboardControllerView,
-  createKeyboardStickyView,
-} from './keyboard-view'
-
-export { createGradientBorder, type GradientBorderProps } from './gradient-border'
