@@ -17,12 +17,9 @@ function generateScaledIcon(
   scale: string
 ): boolean {
   try {
-    execSync(`svgexport "${svgPath}" "${pngPath}" ${scale}`, {
+    const bin = require.resolve('svgexport/bin/index.js')
+    execSync(`${bin} "${svgPath}" "${pngPath}" ${scale}`, {
       stdio: 'pipe',
-      env: {
-        ...process.env,
-        NODE_PATH: join(__dirname, '../../node_modules'),
-      },
     })
     return true
   } catch (error) {
