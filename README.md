@@ -79,153 +79,55 @@ Nativ prescribes a comprehensive React Native stack with the following technolog
 - **[react-dom](https://react.dev/reference/react-dom)** - React DOM bindings (for web compatibility)
 - **[@types/react](https://www.npmjs.com/package/@types/react)** - TypeScript definitions for React
 
-## Installation
+## Getting Started
 
-```bash
-pnpm add nativ
-```
+1. **Clone the template and create your project:**
 
-## Peer Dependencies
+   ```bash
+   git clone https://github.com/alloc/nativ-template my-project-name --depth 1
+   cd my-project-name
+   ```
 
-This library requires several peer dependencies to be installed in your project. You can use the built-in CLI command to install them automatically:
+2. **Run the setup script:**
 
-```bash
-pnpm nativ install
-```
+   > **Note:** Requires Node.js v23.6+ for TypeScript support
 
-### Generating Icon Assets
+   ```bash
+   node setup.mts
+   ```
 
-Automatically generate @2x and @3x PNG versions of SVG icons:
+   This will:
+   - Recreate the git repository
+   - Install all dependencies
+   - Install nativ peer dependencies
+   - Clean up the setup script
 
-```bash
-pnpm nativ generate-icons
-```
+   > **Note:** After dependencies are installed, you may need to run `pnpm approve-builds` to approve certain dev dependencies like esbuild and puppeteer.
 
-This command:
+3. **Customize your app metadata:**
 
-- Scans `./assets/icons` for SVG files
-- Identifies missing @2x.png and @3x.png versions
-- Generates high-resolution PNG assets using [svgexport](https://github.com/piqnt/svgexport)
-- Skips files that already have both versions
+   Edit the following files to configure your app:
+   - **`package.json`**: Update app name, description, and other metadata
+   - **`app.json`**: Configure bundle identifier, native permissions, and Expo plugins
+   - **App Icon**: Place your app icon in `./assets/images/` folder
 
-### Upgrading the Template
+   For app icon and splash screen guidance, see the [Expo documentation](https://docs.expo.dev/develop/user-interface/splash-screen-and-app-icon/).
 
-Upgrade your project to the latest version of the [nativ-template](https://github.com/alloc/nativ-template):
+4. **Start the development server:**
 
-```bash
-pnpm nativ upgrade-template
-```
+   ```bash
+   pnpm start
+   ```
 
-This command:
+5. **Run on a platform:**
+   ```bash
+   pnpm ios     # iOS
+   pnpm android # Android
+   pnpm web     # Web
+   ```
 
-- Creates a patch from the last template commit your project used to the current template version
-- Attempts to apply the patch to your project files
-- If the patch cannot be applied cleanly, you will need to resolve merge conflicts manually
-- After resolving any conflicts, you can run the command again with the `--continue` flag to finish the upgrade:
-
-```bash
-pnpm nativ upgrade-template --continue
-```
-
-## Quick Start
-
-### 1. Set up polyfills
-
-Import polyfills at the top of your app entry point:
-
-```typescript
-import 'nativ/polyfills'
-```
-
-### 2. Create your theme
-
-```typescript
-import { createTheme } from '@shopify/restyle'
-
-const theme = createTheme({
-  colors: {
-    primary: '#007AFF',
-    white: '#ffffff',
-    black: '#000000',
-  },
-  spacing: {
-    sm: 8,
-    md: 12,
-    lg: 16,
-    xl: 24,
-  },
-  borderRadii: {
-    none: 0,
-    xs: 6,
-    sm: 10,
-    md: 18,
-    lg: 21,
-    xl: 36,
-    full: 999,
-  },
-  textVariants: {
-    defaults: {
-      fontFamily: 'InterTight',
-    },
-    heading: {
-      fontFamily: 'InterTight',
-      fontWeight: 'bold',
-      fontSize: 24,
-    },
-  },
-})
-
-export type Theme = typeof theme
-export { theme }
-```
-
-### 3. Create UI components
-
-```typescript
-import {
-  createView,
-  createText,
-  createPressable,
-  createMotiView,
-  createMotiPressable,
-} from 'nativ/ui'
-import { Theme } from './theme'
-
-export const View = createView<Theme>()
-export const Text = createText<Theme>()
-export const Pressable = createPressable<Theme>()
-export const MotiView = createMotiView<Theme>()
-export const MotiPressable = createMotiPressable<Theme>()
-```
-
-### 4. Set up your app
-
-```typescript
-import { AppProvider } from 'nativ/providers'
-import { theme } from './theme'
-import { View, Text } from './ui'
-
-function App() {
-  return (
-    <AppProvider
-      theme={theme}
-      fonts={{ InterTight: require('./fonts/InterTight.ttf') }}
-      db={db} // optional
-      migrations={migrations} // optional
-    >
-      <AppContent />
-    </AppProvider>
-  )
-}
-
-function AppContent() {
-  return (
-    <View flex={1} backgroundColor="white" padding="md">
-      <Text variant="heading">Hello World</Text>
-    </View>
-  )
-}
-```
+> [!IMPORTANT]
+> See the [template readme](./template/README.md) to learn what else is available to you.
 
 ## API Reference
 
@@ -244,7 +146,7 @@ import {
   createMotiImage,
   createMotiScrollView,
 } from 'nativ/ui'
-import { Theme } from './theme'
+import type { Theme } from '~/theme'
 
 const View = createView<Theme>()
 const Text = createText<Theme>()
@@ -274,7 +176,7 @@ Factory functions exported by `nativ/ui`:
 ### Additional UI Components
 
 ```typescript
-import { Theme } from './theme'
+import type { Theme } from '~/theme'
 import {
   createLinearGradient,
   createFlashList,
@@ -306,44 +208,6 @@ You can find more details about each component in the links below:
   - [`KeyboardBackgroundView`](https://kirillzyusko.github.io/react-native-keyboard-controller/docs/api/views/keyboard-background-view) - Visual-only utility that replicates the background of the system keyboard
   - [`KeyboardControllerView`](https://kirillzyusko.github.io/react-native-keyboard-controller/docs/api/views/keyboard-controller-view) - A plain react-native `View` with some additional methods and props
   - [`KeyboardStickyView`](https://kirillzyusko.github.io/react-native-keyboard-controller/docs/api/components/keyboard-sticky-view) - Seamlessly ensures that a designated view sticks to the keyboard's movements, maintaining visibility and interaction
-
-### Providers
-
-```typescript
-import { AppProvider, FontProvider, DatabaseProvider } from 'nativ/providers'
-
-// Complete app setup
-<AppProvider theme={theme} fonts={fonts} db={db} migrations={migrations}>
-  {children}
-</AppProvider>
-
-// Individual providers
-<FontProvider fonts={fonts}>{children}</FontProvider>
-<DatabaseProvider db={db} migrations={migrations} />
-```
-
-### Configuration
-
-#### Metro Config
-
-Use the pre-configured Metro bundler setup with SQL file support:
-
-```javascript
-// metro.config.js
-const config = require('nativ/metro-config')
-module.exports = config
-```
-
-#### Babel Preset
-
-Use the pre-configured Babel preset with Expo, inline imports, and Reanimated:
-
-```javascript
-// babel.config.js
-module.exports = {
-  presets: ['nativ/babel-preset'],
-}
-```
 
 ## License
 

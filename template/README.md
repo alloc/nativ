@@ -2,53 +2,6 @@
 
 A React Native app built with [Nativ](https://github.com/alloc/nativ), Expo, and modern tooling.
 
-## Getting Started
-
-1. **Clone the template and create your project:**
-
-   ```bash
-   git clone https://github.com/alloc/nativ-template my-project-name --depth 1
-   cd my-project-name
-   ```
-
-2. **Run the setup script:**
-
-   > **Note:** Requires Node.js v23.6+ for TypeScript support
-
-   ```bash
-   node setup.mts
-   ```
-
-   This will:
-   - Recreate the git repository
-   - Install all dependencies
-   - Install nativ peer dependencies
-   - Clean up the setup script
-
-   > **Note:** After dependencies are installed, you may need to run `pnpm approve-builds` to approve certain dev dependencies like esbuild and puppeteer.
-
-3. **Customize your app metadata:**
-
-   Edit the following files to configure your app:
-   - **`package.json`**: Update app name, description, and other metadata
-   - **`app.json`**: Configure bundle identifier, native permissions, and Expo plugins
-   - **App Icon**: Place your app icon in `./assets/images/` folder
-
-   For app icon and splash screen guidance, see the [Expo documentation](https://docs.expo.dev/develop/user-interface/splash-screen-and-app-icon/).
-
-4. **Start the development server:**
-
-   ```bash
-   pnpm start
-   ```
-
-5. **Run on a platform:**
-   ```bash
-   pnpm ios     # iOS
-   pnpm android # Android
-   pnpm web     # Web
-   ```
-
 ## Project Structure
 
 ```
