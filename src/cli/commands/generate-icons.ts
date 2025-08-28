@@ -1,6 +1,6 @@
+import { Resvg } from '@resvg/resvg-js'
 import { command } from 'cmd-ts'
-import { execSync } from 'node:child_process'
-import { existsSync, mkdirSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join, parse } from 'node:path'
 import { glob } from 'tinyglobby'
 
@@ -17,10 +17,17 @@ function generateScaledIcon(
   scale: string
 ): boolean {
   try {
-    const bin = require.resolve('svgexport/bin/index.js')
-    execSync(`${bin} "${svgPath}" "${pngPath}" ${scale}`, {
-      stdio: 'pipe',
+    const svg = readFileSync(svgPath, 'utf-8')
+    const zoom = parseFloat(scale)
+
+    const resvg = new Resvg(svg, {
+      fitTo: { mode: 'zoom', value: zoom },
+      background: 'rgba(0,0,0,0)',
     })
+
+    const pngData = resvg.render().asPng()
+    writeFileSync(pngPath, pngData)
+
     return true
   } catch (error) {
     console.error(`  ❌ Failed to generate ${scale}:`, error)
