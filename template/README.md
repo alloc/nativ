@@ -8,9 +8,10 @@ A React Native app built with [Nativ](https://github.com/alloc/nativ), Expo, and
 ├── assets/           # Fonts, icons, images
 ├── src/
 │   ├── app/          # Expo Router pages
-│   ├── db/           # Drizzle ORM setup
-│   ├── theme.ts      # Restyle theme
-│   └── ui.ts         # UI primitives
+│   ├── core/         # Core application files
+│   │   ├── theme.ts  # Restyle theme
+│   │   └── ui.ts     # UI primitives
+│   └── db/           # Drizzle ORM setup
 ├── app.config.ts     # Expo configuration
 ├── drizzle.config.ts # Database configuration
 └── tsconfig.json     # TypeScript configuration
@@ -30,11 +31,21 @@ A React Native app built with [Nativ](https://github.com/alloc/nativ), Expo, and
 
 ### Theme
 
-Edit `src/theme.ts` to customize colors, spacing, and typography.
+Edit `src/core/theme.ts` to customize colors, spacing, and typography.
+
+```ts
+// Import the theme type:
+import type { Theme } from '~/theme'
+```
 
 ### UI Components
 
-UI primitives are exported from `src/ui.ts` using the nativ library. Import them from `~/ui`.
+UI primitives are exported from `src/core/ui.ts` using the nativ library.
+
+```ts
+// Import UI primitives:
+import { Button, View, Text } from '~/ui'
+```
 
 ### Database
 
