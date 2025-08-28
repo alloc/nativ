@@ -66,6 +66,7 @@ export default command({
 
 async function resolveNpmVersion(name: string, version: string) {
   type VersionResponse =
+    | string
     | string[]
     | {
         error: { code: string; summary: string; detail: string }
@@ -75,6 +76,9 @@ async function resolveNpmVersion(name: string, version: string) {
     `npm view ${name}@${version} version --json`
   )
 
+  if (typeof response === 'string') {
+    return [response]
+  }
   if (Array.isArray(response)) {
     return response
   }
