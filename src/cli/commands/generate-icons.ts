@@ -4,6 +4,33 @@ import { existsSync, mkdirSync } from 'node:fs'
 import { join, parse } from 'node:path'
 import { glob } from 'tinyglobby'
 
+/**
+ * Generate a scaled PNG icon from an SVG file
+ * @param svgPath Path to the source SVG file
+ * @param pngPath Path where the PNG should be saved
+ * @param scale Scale factor (e.g. '2x', '3x')
+ * @returns boolean indicating success or failure
+ */
+function generateScaledIcon(
+  svgPath: string,
+  pngPath: string,
+  scale: string
+): boolean {
+  try {
+    execSync(`svgexport "${svgPath}" "${pngPath}" ${scale}`, {
+      stdio: 'pipe',
+      env: {
+        ...process.env,
+        NODE_PATH: join(__dirname, '../../node_modules'),
+      },
+    })
+    return true
+  } catch (error) {
+    console.error(`  ❌ Failed to generate ${scale}:`, error)
+    return false
+  }
+}
+
 export default command({
   name: 'generate-icons',
   description:
@@ -49,16 +76,9 @@ export default command({
 
         if (needs2x) {
           console.log('  → Generating @2x version...')
-          try {
-            execSync(`npx svgexport "${fullSvgPath}" "${png2xPath}" 2x`, {
-              stdio: 'pipe',
-            })
+          if (generateScaledIcon(fullSvgPath, png2xPath, '2x')) {
             console.log('  ✅ @2x generated')
             generatedCount++
-          } catch (error) {
-            console.log(
-              `  ❌ Failed to generate @2x: ${error instanceof Error ? error.message : String(error)}`
-            )
           }
         } else {
           console.log('  ⏭️  @2x already exists')
@@ -66,16 +86,9 @@ export default command({
 
         if (needs3x) {
           console.log('  → Generating @3x version...')
-          try {
-            execSync(`npx svgexport "${fullSvgPath}" "${png3xPath}" 3x`, {
-              stdio: 'pipe',
-            })
+          if (generateScaledIcon(fullSvgPath, png3xPath, '3x')) {
             console.log('  ✅ @3x generated')
             generatedCount++
-          } catch (error) {
-            console.log(
-              `  ❌ Failed to generate @3x: ${error instanceof Error ? error.message : String(error)}`
-            )
           }
         } else {
           console.log('  ⏭️  @3x already exists')
