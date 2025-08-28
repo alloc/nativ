@@ -50,3 +50,5 @@ export {
   createKeyboardControllerView,
   createKeyboardStickyView,
 } from './keyboard-view'
+
+export { createGradientBorder, type GradientBorderProps } from './gradient-border'
