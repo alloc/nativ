@@ -2,9 +2,6 @@
 
 A complete frontend stack for React Native apps that eliminates setup overhead and provides production-ready components out of the box.
 
-> [!NOTE]
-> It's recommended to use the [nativ-template](https://github.com/alloc/nativ-template) when creating a new project.
-
 ## What's Included
 
 Nativ prescribes a comprehensive React Native stack with the following technologies:
