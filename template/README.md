@@ -17,16 +17,6 @@ A React Native app built with [Nativ](https://github.com/alloc/nativ), Expo, and
 └── tsconfig.json     # TypeScript configuration
 ```
 
-## Features
-
-- ✅ **Expo Router** - File-based routing
-- ✅ **Restyle** - Type-safe styling system
-- ✅ **Drizzle ORM** - Type-safe database with SQLite
-- ✅ **TypeScript** - Strict type checking
-- ✅ **Moti** - Smooth animations
-- ✅ **Radashi** - Modern utility library
-- ✅ **Variable Fonts** - InterTight font family
-
 ## Customization
 
 ### Theme
