@@ -51,13 +51,19 @@ export const createMotiPressable = <Theme extends BaseTheme>() =>
   createBox<Theme, ComponentProps<typeof MotiPressable>>(MotiPressable)
 
 export const createScrollView = <Theme extends BaseTheme>() =>
-  createBox<Theme, ComponentProps<typeof ScrollView>>(ScrollView)
+  createBox<Theme, ComponentProps<typeof ScrollView>, typeof ScrollView>(
+    ScrollView
+  )
 
 export const createMotiScrollView = <Theme extends BaseTheme>() =>
-  createBox<Theme, ComponentProps<typeof MotiScrollView>>(MotiScrollView)
+  createBox<Theme, ComponentProps<typeof MotiScrollView>, typeof ScrollView>(
+    MotiScrollView
+  )
 
 export const createTextInput = <Theme extends BaseTheme>() =>
-  createBox<Theme, ComponentProps<typeof TextInput>>(TextInput)
+  createBox<Theme, ComponentProps<typeof TextInput>, typeof TextInput>(
+    TextInput
+  )
 
 export const createLink = <Theme extends BaseTheme>() =>
   createRestyleText<Theme, ComponentProps<typeof Link>>(Link)
