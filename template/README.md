@@ -55,9 +55,9 @@ import { Button, View, Text } from '~/ui'
 
 ### Assets
 
-- **Icons**: Add SVG files to `assets/icons/` and run `pnpm nativ generate-icons`
+- **Icons**: Add to `assets/icons/`
 - **Images**: Add to `assets/images/`
-- **Fonts**: Add to `assets/fonts/` and update the theme
+- **Fonts**: Add to `assets/fonts/` and import in `src/_layout.tsx`
 
 ## Learn More
 
