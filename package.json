@@ -11,7 +11,6 @@
     "update-lockfile": "node scripts/update-lockfile.mts"
   },
   "dependencies": {
-    "@resvg/resvg-js": "^2.6.2",
     "babel-plugin-inline-import": "^3.0.0",
     "cmd-ts": "^0.13.0",
     "picospawn": "^0.3.9",
