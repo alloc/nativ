@@ -1,13 +1,13 @@
 import {
-  BaseTheme,
+  type BaseTheme,
   createBox,
   createText as createRestyleText,
 } from '@shopify/restyle'
-import { Image, ImageStyle } from 'expo-image'
+import { Image, type ImageStyle } from 'expo-image'
 import { Link } from 'expo-router'
 import { motify, MotiScrollView, MotiText, MotiView } from 'moti'
 import { MotiPressable } from 'moti/interactions'
-import { ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 import { Pressable, ScrollView, TextInput } from 'react-native'
 
 export const createView = <Theme extends BaseTheme>() => createBox<Theme>()
