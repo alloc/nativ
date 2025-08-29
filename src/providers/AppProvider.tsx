@@ -39,7 +39,6 @@ export type AppProviderProps<Theme extends BaseTheme> = {
   theme: Theme
   /**
    * Called once the app has finished initializing.
-   * - Fonts have loaded
    * - Database migrations have run
    */
   onLoad: () => void
