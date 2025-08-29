@@ -5,7 +5,7 @@ A React Native app built with [Nativ](https://github.com/alloc/nativ), Expo, and
 ## Project Structure
 
 ```
-├── assets/           # Fonts, icons, images
+├── assets/           # Fonts, icons, images, sounds
 ├── src/
 │   ├── app/          # Expo Router pages
 │   ├── core/         # Core application files
