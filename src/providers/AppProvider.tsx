@@ -20,7 +20,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 type UseMigrationsParams = Parameters<typeof useMigrations>
 
-export type AppProviderProps<Theme extends BaseTheme> = {
+export type AppProviderProps = {
   /**
    * The `db` instance imported from `~/db/client`.
    */
@@ -36,7 +36,7 @@ export type AppProviderProps<Theme extends BaseTheme> = {
   /**
    * The `theme` object imported from `~/theme`.
    */
-  theme: Theme
+  theme: BaseTheme | { light: BaseTheme; dark: BaseTheme; default?: BaseTheme }
   /**
    * Called once the app has finished initializing.
    * - Database migrations have run
@@ -44,14 +44,14 @@ export type AppProviderProps<Theme extends BaseTheme> = {
   onLoad: () => void
 }
 
-export function AppProvider<Theme extends BaseTheme>({
+export function AppProvider({
   db,
   migrations,
   queryClient,
   theme,
   onLoad,
   children,
-}: AppProviderProps<Theme> & {
+}: AppProviderProps & {
   children: ReactNode
 }) {
   const colorScheme = useColorScheme()
@@ -84,7 +84,16 @@ export function AppProvider<Theme extends BaseTheme>({
       <StatusBar style="auto" />
       <GestureHandlerRootView>
         <QueryClientProvider client={queryClient}>
-          <RestyleThemeProvider theme={theme}>{children}</RestyleThemeProvider>
+          <RestyleThemeProvider
+            theme={
+              (colorScheme === 'dark'
+                ? theme.dark
+                : colorScheme === 'light'
+                  ? theme.light
+                  : theme.default || theme.light) || theme
+            }>
+            {children}
+          </RestyleThemeProvider>
         </QueryClientProvider>
       </GestureHandlerRootView>
     </NavigationThemeProvider>
