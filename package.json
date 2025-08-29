@@ -36,6 +36,7 @@
     "expo-device": "*",
     "expo-font": "*",
     "expo-haptics": "*",
+    "expo-image": "*",
     "expo-linear-gradient": "*",
     "expo-linking": "*",
     "expo-localization": "*",
