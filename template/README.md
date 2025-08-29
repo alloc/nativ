@@ -57,7 +57,7 @@ import { Button, View, Text } from '~/ui'
 
 - **Icons**: Add to `assets/icons/`
 - **Images**: Add to `assets/images/`
-- **Fonts**: Add to `assets/fonts/` and import in `src/_layout.tsx`
+- **Fonts**: Add to `assets/fonts/` and `app.config.ts`
 
 ## Learn More
 

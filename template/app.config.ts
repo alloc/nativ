@@ -36,10 +36,18 @@ const expo: ExpoConfig = {
   },
   plugins: [
     'expo-router',
-    'expo-font',
     'expo-localization',
     'expo-sqlite',
     ['expo-build-properties', {}],
+    [
+      'expo-font',
+      {
+        fonts: [
+          './assets/fonts/InterTight[wght].ttf',
+          './assets/fonts/InterTight-Italic[wght].ttf',
+        ],
+      },
+    ],
     [
       // https://docs.expo.dev/versions/latest/sdk/splash-screen/#configurable-properties
       'expo-splash-screen',

@@ -10,10 +10,6 @@ import { queryClient } from '~/queryClient'
 import { theme } from '~/theme'
 import { View } from '~/ui'
 
-const fonts = {
-  InterTight: require('~/fonts/InterTight[wght].ttf'),
-}
-
 // Keep the splash screen visible until the app is loaded.
 SplashScreen.preventAutoHideAsync()
 
@@ -21,7 +17,6 @@ export default function AppLayout() {
   return (
     <AppProvider
       db={db}
-      fonts={fonts}
       migrations={migrations}
       theme={theme}
       queryClient={queryClient}

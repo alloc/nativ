@@ -13,7 +13,6 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator'
-import { useFonts } from 'expo-font'
 import { StatusBar } from 'expo-status-bar'
 import { ReactNode, useEffect, useLayoutEffect } from 'react'
 import { AppState, Platform, useColorScheme } from 'react-native'
@@ -26,11 +25,6 @@ export type AppProviderProps<Theme extends BaseTheme> = {
    * The `db` instance imported from `~/db/client`.
    */
   db: UseMigrationsParams[0]
-  /**
-   * A mapping of font family names to font file references (using
-   * `require`).
-   */
-  fonts: Record<string, any>
   /**
    * The default export of `~/db/migrations`.
    */
@@ -53,7 +47,6 @@ export type AppProviderProps<Theme extends BaseTheme> = {
 
 export function AppProvider<Theme extends BaseTheme>({
   db,
-  fonts,
   migrations,
   queryClient,
   theme,
@@ -74,29 +67,15 @@ export function AppProvider<Theme extends BaseTheme>({
     }
   }, [])
 
-  const migrationState = useMigrations(db, migrations)
-  const [fontsLoaded, fontsError] = useFonts(fonts)
+  const migrationTask = useMigrations(db, migrations)
+  if (migrationTask.error) {
+    throw migrationTask.error
+  }
 
-  useEffect(() => {
-    if (fontsError) {
-      console.error('Fonts failed to load:', fontsError)
-    }
-  }, [fontsError])
+  const allowRender = migrationTask.success
+  useLayoutEffect(() => void (allowRender && onLoad()), [allowRender])
 
-  useEffect(() => {
-    if (migrationState.error) {
-      console.error('Database migrations failed:', migrationState.error)
-    }
-  }, [migrationState.error])
-
-  const appLoaded = fontsLoaded && migrationState.success
-  useLayoutEffect(() => {
-    if (appLoaded) {
-      onLoad()
-    }
-  }, [appLoaded])
-
-  if (!appLoaded) {
+  if (!allowRender) {
     return null
   }
 
