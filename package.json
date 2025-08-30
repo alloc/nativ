@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@alloc/prettier-config": "^1.0.0",
-    "@shopify/restyle": "npm:@alloc/restyle@^2.5.3",
+    "@shopify/restyle": "npm:@alloc/restyle@^2.7.0",
     "@types/node": "^24.3.0",
     "moti": "npm:@alloc/moti@54.0.0-beta.3",
     "prettier": "^3.6.2",
@@ -78,7 +78,7 @@
   ],
   "exports": {
     "./ui": {
-      "react-native": "./src/ui/index.ts",
+      "react-native": "./src/ui/index.tsx",
       "types": "./dist/ui/index.d.ts",
       "default": "./dist/ui/index.js"
     },

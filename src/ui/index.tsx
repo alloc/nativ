@@ -1,13 +1,19 @@
 import {
-  type BaseTheme,
+  BoxProps,
+  boxRestyleFunctions,
+  composeRestyleFunctions,
   createBox,
   createText as createRestyleText,
+  ResponsiveColor,
+  useResponsiveProp,
+  useRestyle,
+  type BaseTheme,
 } from '@shopify/restyle'
 import { Image, type ImageStyle } from 'expo-image'
 import { Link } from 'expo-router'
 import { motify, MotiScrollView, MotiText, MotiView } from 'moti'
 import { MotiPressable } from 'moti/interactions'
-import type { ComponentProps } from 'react'
+import { forwardRef, Ref, type ComponentProps } from 'react'
 import { Pressable, ScrollView, TextInput } from 'react-native'
 
 export const createView = <Theme extends BaseTheme>() => createBox<Theme>()
@@ -22,11 +28,30 @@ export const createMotiText = <Theme extends BaseTheme>() =>
   createRestyleText<Theme, ComponentProps<typeof MotiText>>(MotiText)
 
 export const createImage = <Theme extends BaseTheme>() => {
-  const RestyleImage = createBox<
-    Theme,
-    ComponentProps<typeof Image>,
-    typeof Image
-  >(Image)
+  type ImageProps = Omit<ComponentProps<typeof Image>, 'tintColor'> & {
+    /**
+     * A color used to tint template images (a bitmap image where only the opacity matters).
+     * The color is applied to every non-transparent pixel, causing the image's shape to adopt that color.
+     * This effect is not applied to placeholders.
+     * @default null
+     */
+    tintColor?: ResponsiveColor<Theme> | null
+  }
+
+  const restyleProps = composeRestyleFunctions(boxRestyleFunctions)
+
+  const RestyleImage = forwardRef(function RestyleImage(
+    props: BoxProps<Theme> & Omit<ImageProps, keyof BoxProps<Theme>>,
+    ref: Ref<Image>
+  ) {
+    return (
+      <Image
+        {...useRestyle(restyleProps as any, props)}
+        tintColor={useResponsiveProp(props.tintColor, 'colors')}
+        ref={ref}
+      />
+    )
+  })
 
   return copyStaticMembers(RestyleImage, Image) as typeof RestyleImage &
     StaticMembers<typeof Image>
