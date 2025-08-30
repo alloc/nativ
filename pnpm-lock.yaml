@@ -142,8 +142,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       '@shopify/restyle':
-        specifier: npm:@alloc/restyle@^2.5.3
-        version: '@alloc/restyle@2.6.0(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)'
+        specifier: npm:@alloc/restyle@^2.7.0
+        version: '@alloc/restyle@2.7.0(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)'
       '@types/node':
         specifier: ^24.3.0
         version: 24.3.0
@@ -207,8 +207,8 @@ packages:
   '@alloc/prettier-config@1.0.0':
     resolution: {integrity: sha512-xm50V1qxSdTh1O1fKA+gqcU605YSnxfq6HwtYSFU3fRsKMFnUSuSOxqSAPI7y2sRxqPed2EIuGmNn107LVQM6g==}
 
-  '@alloc/restyle@2.6.0':
-    resolution: {integrity: sha512-OfGKHTfXpgK4/dEm6xIx7vYoqhGRr4XbI8qve6wR1kCiw8jQ/RFTQHEMXxWPk9aXFkFAdY0+7PksRZnfDBCk9g==}
+  '@alloc/restyle@2.7.0':
+    resolution: {integrity: sha512-62AA8EcFgPPGxCIu3XI06mdadQf9Hc9GS9r+i39HKrnBHQa4n9MHs1z7Rs9KsyAK+eIaiKRf1P5j6WVwJy1+8w==}
     peerDependencies:
       react: '*'
       react-native: '*'
@@ -4571,7 +4571,7 @@ snapshots:
 
   '@alloc/prettier-config@1.0.0': {}
 
-  '@alloc/restyle@2.6.0(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)':
+  '@alloc/restyle@2.7.0(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)':
     dependencies:
       react: 19.1.1
       react-native: 0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1)
@@ -6326,9 +6326,7 @@ snapshots:
       metro-runtime: 0.83.1
     transitivePeerDependencies:
       - '@babel/core'
-      - bufferutil
       - supports-color
-      - utf-8-validate
 
   '@react-native/normalize-colors@0.81.0': {}
 
