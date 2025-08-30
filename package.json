@@ -63,7 +63,7 @@
     "@alloc/prettier-config": "^1.0.0",
     "@shopify/restyle": "npm:@alloc/restyle@^3.0.0",
     "@types/node": "^24.3.0",
-    "moti": "npm:@alloc/moti@54.0.0-beta.3",
+    "moti": "npm:@alloc/moti@54.0.0-beta.4",
     "prettier": "^3.6.2",
     "radashi": "^12.6.2",
     "rimraf": "^6.0.1",

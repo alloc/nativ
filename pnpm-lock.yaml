@@ -51,46 +51,46 @@ importers:
         specifier: ^54.0.0-preview.11
         version: 54.0.0-preview.11(@babel/core@7.28.3)(@expo/metro-runtime@6.1.1)(expo-router@6.0.0-beta.10)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)
       expo-build-properties:
-        specifier: 1.0.5
+        specifier: '*'
         version: 1.0.5(expo@54.0.0-preview.11)
       expo-constants:
-        specifier: 18.0.5
+        specifier: '*'
         version: 18.0.5(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))
       expo-dev-client:
-        specifier: 6.0.6
+        specifier: '*'
         version: 6.0.6(expo@54.0.0-preview.11)
       expo-device:
-        specifier: 8.0.4
+        specifier: '*'
         version: 8.0.4(expo@54.0.0-preview.11)
       expo-font:
-        specifier: 14.0.5
+        specifier: '*'
         version: 14.0.5(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)
       expo-image:
-        specifier: 3.0.4
+        specifier: '*'
         version: 3.0.4(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)
       expo-linear-gradient:
-        specifier: 15.0.4
+        specifier: '*'
         version: 15.0.4(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)
       expo-linking:
-        specifier: 8.0.5
+        specifier: '*'
         version: 8.0.5(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)
       expo-localization:
-        specifier: 17.0.4
+        specifier: '*'
         version: 17.0.4(expo@54.0.0-preview.11)(react@19.1.1)
       expo-notifications:
-        specifier: 0.32.6
+        specifier: '*'
         version: 0.32.6(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)
       expo-router:
-        specifier: 6.0.0-beta.10
+        specifier: ^6.0.0-beta.0
         version: 6.0.0-beta.10(cf71a6b78822aab275e6ca870d7b57e9)
       expo-splash-screen:
-        specifier: 31.0.6
+        specifier: '*'
         version: 31.0.6(expo@54.0.0-preview.11)
       expo-sqlite:
-        specifier: 16.0.5
+        specifier: '*'
         version: 16.0.5(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)
       expo-status-bar:
-        specifier: 3.0.5
+        specifier: '*'
         version: 3.0.5(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)
       picospawn:
         specifier: ^0.3.9
@@ -148,8 +148,8 @@ importers:
         specifier: ^24.3.0
         version: 24.3.0
       moti:
-        specifier: npm:@alloc/moti@54.0.0-beta.3
-        version: '@alloc/moti@54.0.0-beta.3(@emotion/is-prop-valid@0.8.8)(expo-linear-gradient@15.0.4(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react-native-reanimated@4.0.2(@babel/core@7.28.3)(react-native-worklets@0.4.1(@babel/core@7.28.3)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native-safe-area-context@5.6.1(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react@19.1.1)'
+        specifier: npm:@alloc/moti@54.0.0-beta.4
+        version: '@alloc/moti@54.0.0-beta.4(@emotion/is-prop-valid@0.8.8)(expo-linear-gradient@15.0.4(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react-native-reanimated@4.0.2(@babel/core@7.28.3)(react-native-worklets@0.4.1(@babel/core@7.28.3)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native-safe-area-context@5.6.1(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react@19.1.1)'
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -192,8 +192,8 @@ packages:
       graphql:
         optional: true
 
-  '@alloc/moti@54.0.0-beta.3':
-    resolution: {integrity: sha512-5nv4roh2SYwe8TU3v4mXn1XFsZjisqdvbQ7ZN1dT5976tRQlOuOhpvEb8AWI5OCrK6yr91SDuT3KP6Py008NGw==}
+  '@alloc/moti@54.0.0-beta.4':
+    resolution: {integrity: sha512-/aEPJqd2fwfCmqYuQCAhbugfPsdvs8lmgGGr6PhNM42/fyvhzneyAsaIvJddWYBXiioxpZHKqCTWscjBZz6Uew==}
     peerDependencies:
       expo-linear-gradient: '*'
       react-native-linear-gradient: '*'
@@ -4595,7 +4595,7 @@ snapshots:
 
   '@0no-co/graphql.web@1.2.0': {}
 
-  '@alloc/moti@54.0.0-beta.3(@emotion/is-prop-valid@0.8.8)(expo-linear-gradient@15.0.4(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react-native-reanimated@4.0.2(@babel/core@7.28.3)(react-native-worklets@0.4.1(@babel/core@7.28.3)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native-safe-area-context@5.6.1(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react@19.1.1)':
+  '@alloc/moti@54.0.0-beta.4(@emotion/is-prop-valid@0.8.8)(expo-linear-gradient@15.0.4(expo@54.0.0-preview.11)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react-native-reanimated@4.0.2(@babel/core@7.28.3)(react-native-worklets@0.4.1(@babel/core@7.28.3)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native-safe-area-context@5.6.1(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react@19.1.1)':
     dependencies:
       framer-motion: 12.23.12(@emotion/is-prop-valid@0.8.8)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react-native-reanimated: 4.0.2(@babel/core@7.28.3)(react-native-worklets@0.4.1(@babel/core@7.28.3)(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1))(react-native@0.81.0(@babel/core@7.28.3)(@react-native/metro-config@0.81.0(@babel/core@7.28.3))(@types/react@19.1.10)(react@19.1.1))(react@19.1.1)
@@ -6370,9 +6370,7 @@ snapshots:
       metro-runtime: 0.83.1
     transitivePeerDependencies:
       - '@babel/core'
-      - bufferutil
       - supports-color
-      - utf-8-validate
 
   '@react-native/normalize-colors@0.81.0': {}
 
