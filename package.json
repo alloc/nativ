@@ -6,7 +6,7 @@
     "nativ": "dist/cli/main.js"
   },
   "scripts": {
-    "build": "tsup-node --clean",
+    "build": "rimraf dist && tsup-node",
     "dev": "tsup-node --watch",
     "update-lockfile": "node scripts/update-lockfile.mts"
   },
@@ -66,6 +66,7 @@
     "moti": "npm:@alloc/moti@54.0.0-beta.3",
     "prettier": "^3.6.2",
     "radashi": "^12.6.2",
+    "rimraf": "^6.0.1",
     "tsc-lint": "^0.1.9",
     "tsup": "^8.5.0"
   },
@@ -79,48 +80,39 @@
   "exports": {
     "./ui": {
       "react-native": "./src/ui/index.tsx",
-      "types": "./dist/ui/index.d.ts",
-      "default": "./dist/ui/index.js"
+      "types": "./dist/ui/index.d.ts"
     },
     "./ui/flash-list": {
       "react-native": "./src/ui/flash-list.ts",
-      "types": "./dist/ui/flash-list.d.ts",
-      "default": "./dist/ui/flash-list.js"
+      "types": "./dist/ui/flash-list.d.ts"
     },
     "./ui/gradient-border": {
       "react-native": "./src/ui/gradient-border.tsx",
-      "types": "./dist/ui/gradient-border.d.ts",
-      "default": "./dist/ui/gradient-border.js"
+      "types": "./dist/ui/gradient-border.d.ts"
     },
     "./ui/keyboard-view": {
       "react-native": "./src/ui/keyboard-view.ts",
-      "types": "./dist/ui/keyboard-view.d.ts",
-      "default": "./dist/ui/keyboard-view.js"
+      "types": "./dist/ui/keyboard-view.d.ts"
     },
     "./ui/linear-gradient": {
       "react-native": "./src/ui/linear-gradient.ts",
-      "types": "./dist/ui/linear-gradient.d.ts",
-      "default": "./dist/ui/linear-gradient.js"
+      "types": "./dist/ui/linear-gradient.d.ts"
     },
     "./ui/masked-view": {
       "react-native": "./src/ui/masked-view.ts",
-      "types": "./dist/ui/masked-view.d.ts",
-      "default": "./dist/ui/masked-view.js"
+      "types": "./dist/ui/masked-view.d.ts"
     },
     "./providers": {
       "react-native": "./src/providers/index.ts",
-      "types": "./dist/providers.d.ts",
-      "default": "./dist/providers.js"
+      "types": "./dist/providers.d.ts"
     },
     "./hooks": {
       "react-native": "./src/hooks/index.ts",
-      "types": "./dist/hooks.d.ts",
-      "default": "./dist/hooks.js"
+      "types": "./dist/hooks.d.ts"
     },
     "./polyfills": {
       "react-native": "./src/polyfills/index.ts",
-      "types": "./dist/polyfills.d.ts",
-      "default": "./dist/polyfills.js"
+      "types": "./dist/polyfills.d.ts"
     },
     "./metro-config": "./metro.config.js",
     "./babel-preset": "./babel-preset.js"
