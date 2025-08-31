@@ -11,9 +11,9 @@ const expo: ExpoConfig = {
     supportsTablet: true,
     bundleIdentifier: 'com.example.mynativapp',
     icon: {
-      dark: './assets/images/icon-dark.png',
-      light: './assets/images/icon.png',
-      tinted: './assets/images/icon-tinted.png',
+      dark: './assets/images/ios-dark.png',
+      light: './assets/images/ios-light.png',
+      tinted: './assets/images/ios-tinted.png',
     },
     infoPlist: {
       NSAppTransportSecurity: {
@@ -52,11 +52,11 @@ const expo: ExpoConfig = {
       // https://docs.expo.dev/versions/latest/sdk/splash-screen/#configurable-properties
       'expo-splash-screen',
       {
-        image: './assets/images/splash.png',
+        image: './assets/images/splash-icon-light.png',
         imageWidth: 200,
         backgroundColor: '#232323',
         dark: {
-          image: './assets/images/splash-dark.png',
+          image: './assets/images/splash-icon-dark.png',
           backgroundColor: '#000000',
         },
       },
