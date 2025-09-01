@@ -49,14 +49,16 @@ export default command({
         } else {
           const versions = await resolveNpmVersion(name, peerDeps[name])
           version = versions[versions.length - 1]
+
+          // Expo prefers ~ to be present, instead of an exact version.
+          if (name === 'expo') {
+            version = '~' + version
+          }
         }
         pnpmDeps[name] = version
         delete otherDeps[name]
       }
     }
-
-    // Expo prefers ~ to be present, instead of an exact version.
-    pnpmDeps.expo = '~' + pnpmDeps.expo
 
     $('pnpm install --save-exact', [
       ...Object.entries(pnpmDeps).map(
