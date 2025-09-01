@@ -1,4 +1,4 @@
-import { command, flag } from 'cmd-ts'
+import { command, flag, option, optional, string } from 'cmd-ts'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import spawn, { spawnSync as $ } from 'picospawn'
@@ -12,8 +12,13 @@ export default command({
       long: 'no-lockfile',
       description: 'Do not read or write the lockfile (forwarded to pnpm)',
     }),
+    expoVersion: option({
+      long: 'expo-version',
+      description: 'The version of expo to install',
+      type: optional(string),
+    }),
   },
-  handler: async ({ noLockfile }) => {
+  handler: async ({ noLockfile, expoVersion }) => {
     // Read nativ's package.json to get peer dependencies
     const packageJsonPath = join(__dirname, '../../package.json')
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
@@ -38,8 +43,14 @@ export default command({
     // These dependencies use a prerelease, so we need to install an exact version.
     for (const name of Object.keys(otherDeps)) {
       if (name === 'expo' || peerDeps[name].includes('-')) {
-        const versions = await resolveNpmVersion(name, peerDeps[name])
-        pnpmDeps[name] = versions.pop()!
+        let version: string
+        if (name === 'expo' && expoVersion) {
+          version = expoVersion
+        } else {
+          const versions = await resolveNpmVersion(name, peerDeps[name])
+          version = versions[versions.length - 1]
+        }
+        pnpmDeps[name] = version
         delete otherDeps[name]
       }
     }
