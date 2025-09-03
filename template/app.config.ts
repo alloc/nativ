@@ -24,6 +24,7 @@ const expo: ExpoConfig = {
   android: {
     package: 'com.example.mynativapp',
     predictiveBackGestureEnabled: true,
+    userInterfaceStyle: 'automatic',
     adaptiveIcon: {
       foregroundImage: './assets/images/adaptive-icon.png',
       backgroundColor: '#ffffff',
