@@ -29,6 +29,7 @@ Nativ prescribes a comprehensive React Native stack with the following technolog
 - **[expo-linear-gradient](https://docs.expo.dev/versions/latest/sdk/linear-gradient/)** - Linear gradient view component
 - **[expo-status-bar](https://docs.expo.dev/versions/latest/sdk/status-bar/)** - Status bar configuration
 - **[expo-splash-screen](https://docs.expo.dev/versions/latest/sdk/splash-screen/)** - Splash screen management
+- **[expo-system-ui](https://docs.expo.dev/versions/latest/sdk/system-ui/)** - A library that allows interacting with system UI elements
 - **[react-native-keyboard-controller](https://kirillzyusko.github.io/react-native-keyboard-controller/)** - Comprehensive keyboard handling with KeyboardAvoidingView, KeyboardAwareScrollView, and more
 - **[@react-native-masked-view/masked-view](https://docs.expo.dev/versions/latest/sdk/masked-view/)** - Masked view component for creating visual effects and overlays
 

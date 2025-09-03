@@ -43,6 +43,7 @@
     "expo-splash-screen": "*",
     "expo-sqlite": "*",
     "expo-status-bar": "*",
+    "expo-system-ui": "*",
     "moti": "*",
     "radashi": "*",
     "react": "*",
@@ -152,6 +153,9 @@
       "optional": true
     },
     "expo-sqlite": {
+      "optional": true
+    },
+    "expo-system-ui": {
       "optional": true
     },
     "moti": {
