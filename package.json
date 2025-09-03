@@ -116,5 +116,61 @@
     },
     "./metro-config": "./metro.config.js",
     "./babel-preset": "./babel-preset.js"
+  },
+  "peerDependenciesMeta": {
+    "@react-native-async-storage/async-storage": {
+      "optional": true
+    },
+    "@react-native-community/netinfo": {
+      "optional": true
+    },
+    "@react-native-masked-view/masked-view": {
+      "optional": true
+    },
+    "@shopify/flash-list": {
+      "optional": true
+    },
+    "@shopify/restyle": {
+      "optional": true
+    },
+    "@tanstack/react-query": {
+      "optional": true
+    },
+    "drizzle-orm": {
+      "optional": true
+    },
+    "drizzle-plus": {
+      "optional": true
+    },
+    "expo-linear-gradient": {
+      "optional": true
+    },
+    "expo-localization": {
+      "optional": true
+    },
+    "expo-notifications": {
+      "optional": true
+    },
+    "expo-sqlite": {
+      "optional": true
+    },
+    "moti": {
+      "optional": true
+    },
+    "radashi": {
+      "optional": true
+    },
+    "react-native-get-random-values": {
+      "optional": true
+    },
+    "react-native-hapticlabs": {
+      "optional": true
+    },
+    "react-native-keyboard-controller": {
+      "optional": true
+    },
+    "valtio": {
+      "optional": true
+    }
   }
 }

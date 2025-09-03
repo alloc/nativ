@@ -22,7 +22,9 @@ export default command({
     // Read nativ's package.json to get peer dependencies
     const packageJsonPath = join(__dirname, '../../package.json')
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
-    const peerDeps: Record<string, string> = packageJson.peerDependencies || {}
+    const peerDeps: Record<string, string> = packageJson.peerDependencies
+    const peerDepsMeta: Record<string, { optional?: boolean }> =
+      packageJson.peerDependenciesMeta
 
     // Read the project's package.json
     const projectPkgJsonPath = join(process.cwd(), 'package.json')
@@ -33,7 +35,13 @@ export default command({
     const excludedDeps = projectPkgJson.nativ?.exclude || []
 
     for (const name of excludedDeps) {
-      delete peerDeps[name]
+      if (peerDepsMeta[name]?.optional) {
+        delete peerDeps[name]
+      } else {
+        console.warn(
+          `⚠️  The "${name}" package is not optional and therefore cannot be excluded from the project. Remove it from the "nativ.exclude" field in your project's package.json.`
+        )
+      }
     }
 
     // Use our fork, but still use @shopify/restyle as the package name.
