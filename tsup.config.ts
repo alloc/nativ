@@ -26,6 +26,9 @@ export default defineConfig([
     },
     format: ['cjs'],
     sourcemap: true,
+    esbuildOptions(options) {
+      options.sourcesContent = false
+    },
     noExternal: ['radashi'],
     treeshake: 'smallest',
   },
