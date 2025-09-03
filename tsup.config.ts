@@ -26,5 +26,7 @@ export default defineConfig([
     },
     format: ['cjs'],
     sourcemap: true,
+    noExternal: ['radashi'],
+    treeshake: 'smallest',
   },
 ])
