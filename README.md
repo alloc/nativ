@@ -50,6 +50,7 @@ Nativ prescribes a comprehensive React Native stack with the following technolog
 
 - **[radashi](https://radashi.js.org/)** - Modern TypeScript utility toolkit (Lodash alternative)
 - **[react-native-get-random-values](https://github.com/LinusU/react-native-get-random-values)** - Polyfill for crypto.getRandomValues()
+- **[react-native-hapticlabs](https://www.npmjs.com/package/react-native-hapticlabs)** - Advanced haptic feedback library for playing custom haptic patterns
 - **[@react-native-async-storage/async-storage](https://docs.expo.dev/versions/latest/sdk/async-storage/)** - Asynchronous, unencrypted, persistent, key-value storage system
 - **[@react-native-community/netinfo](https://docs.expo.dev/versions/latest/sdk/netinfo/)** - Network connectivity information and monitoring
 
@@ -58,7 +59,7 @@ Nativ prescribes a comprehensive React Native stack with the following technolog
 - **[expo-constants](https://docs.expo.dev/versions/latest/sdk/constants/)** - System and app constants
 - **[expo-device](https://docs.expo.dev/versions/latest/sdk/device/)** - Device information and capabilities
 - **[expo-font](https://docs.expo.dev/versions/latest/sdk/font/)** - Font loading and management
-- **[expo-haptics](https://docs.expo.dev/versions/latest/sdk/haptics/)** - Haptic feedback
+- **[expo-image](https://docs.expo.dev/versions/latest/sdk/image/)** - Cross-platform, performant image component with advanced features like caching and format support
 - **[expo-linking](https://docs.expo.dev/versions/latest/sdk/linking/)** - Deep linking and URL handling
 - **[expo-localization](https://docs.expo.dev/versions/latest/sdk/localization/)** - Locale and language information
 - **[expo-notifications](https://docs.expo.dev/versions/latest/sdk/notifications/)** - Local and push notifications
