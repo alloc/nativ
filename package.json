@@ -1,6 +1,6 @@
 {
   "name": "nativ",
-  "version": "0.8.4",
+  "version": "0.8.5",
   "description": "Core utilities and components for React Native apps",
   "bin": {
     "nativ": "dist/cli/main.js"
