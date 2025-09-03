@@ -24,12 +24,24 @@ export default command({
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
     const peerDeps: Record<string, string> = packageJson.peerDependencies || {}
 
+    // Read the project's package.json
+    const projectPkgJsonPath = join(process.cwd(), 'package.json')
+    const projectPkgJson = JSON.parse(readFileSync(projectPkgJsonPath, 'utf-8'))
+
+    // The "nativ.exclude" field can be used to exclude dependencies from
+    // being installed.
+    const excludedDeps = projectPkgJson.nativ?.exclude || []
+
+    for (const name of excludedDeps) {
+      delete peerDeps[name]
+    }
+
     // Use our fork, but still use @shopify/restyle as the package name.
-    peerDeps['@shopify/restyle'] =
+    peerDeps['@shopify/restyle'] &&=
       'npm:@alloc/restyle@' + peerDeps['@shopify/restyle']
 
     // Use our fork, but still use moti as the package name.
-    peerDeps['moti'] = 'npm:@alloc/moti@' + peerDeps['moti']
+    peerDeps['moti'] &&= 'npm:@alloc/moti@' + peerDeps['moti']
 
     // These dependencies must be installed with pnpm, not expo.
     const pnpmDeps = pick(peerDeps, (_, name) =>
