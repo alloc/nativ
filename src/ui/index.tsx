@@ -86,7 +86,7 @@ export const createMotiScrollView = <Theme extends BaseTheme>() =>
   )
 
 export const createTextInput = <Theme extends BaseTheme>() =>
-  createBox<Theme, ComponentProps<typeof TextInput>, typeof TextInput>(
+  createRestyleText<Theme, ComponentProps<typeof TextInput>, typeof TextInput>(
     TextInput
   )
 
