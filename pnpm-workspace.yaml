@@ -1,9 +1,10 @@
-ignoreWorkspaceRootCheck: true
 packages:
   - ./
   - ./template
-overrides:
-  nativ: 'workspace:*'
+ignoreWorkspaceRootCheck: true
 onlyBuiltDependencies:
+  - esbuild
   - phantomjs-prebuilt
   - puppeteer
+overrides:
+  nativ: workspace:*
